@@ -10,6 +10,7 @@ function SignupPage(props) {
   const [password, setPassword] = useState("");
   const [profileImage, setProfileImage] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
+  const [driver, setDriver] = useState("");
   const [probationaryDriver, setProbationaryDriver] = useState("");
   const [errorMessage, setErrorMessage] = useState(undefined);
 
@@ -20,6 +21,7 @@ function SignupPage(props) {
   const handlePassword = (e) => setPassword(e.target.value);
   const handleProfileImage = (e) => setProfileImage(e.target.value);
   const handlePhoneNumber = (e) => setPhoneNumber(e.target.value);
+  const handleDriver = (e) => setDriver(e.target.value);
   const handleProbationaryDriver = (e) => setProbationaryDriver(e.target.value);
 
   const handleSignupSubmit = (e) => {
@@ -31,6 +33,7 @@ function SignupPage(props) {
       password,
       profileImage,
       phoneNumber,
+      driver,
       probationaryDriver,
     };
 
@@ -79,6 +82,15 @@ function SignupPage(props) {
           value={phoneNumber}
           onChange={handlePhoneNumber}
         />
+
+        <label>Driver:</label>
+        <input
+          type="text"
+          name="Driver"
+          value={driver}
+          onChange={handleDriver}
+        />
+
         <label>Probationary driver:</label>
         <input
           type="text"
@@ -86,6 +98,8 @@ function SignupPage(props) {
           value={probationaryDriver}
           onChange={handleProbationaryDriver}
         />
+
+        <br/>
 
         <button type="submit">Sign Up</button>
       </form>
