@@ -19,7 +19,7 @@ function AddVehicle(props) {
     // We need the project id when creating the new task
     const { rideId } = props;
     // Create an object representing the body of the POST request
-    const requestBody = { driver, vehicle, vehicleImage, probationalDriversLicense, carSharing, projectId };
+    const requestBody = { driver, vehicle, vehicleImage, probationalDriversLicense, carSharing, rideId };
 
     axios
       .post(`${API_URL}/api/vehicle`, requestBody, {
