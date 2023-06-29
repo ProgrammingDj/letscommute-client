@@ -13,7 +13,7 @@ function Navbar() {
 
       {isLoggedIn && (
         <>
-          <Link to="/explore">
+          <Link to="/rides">
             <button>Explore</button>
           </Link>
           <button onClick={logOutUser}>Logout</button>

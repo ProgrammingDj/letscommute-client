@@ -19,7 +19,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
 
         <Route
-          path="/explore"
+          path="/rides"
           element={
             <IsPrivate>
               {" "}
@@ -29,7 +29,7 @@ function App() {
         />
 
         <Route
-          path="/projects/:projectId"
+          path="/rides/:ridesId"
           element={
             <IsPrivate>
               {" "}
@@ -39,7 +39,7 @@ function App() {
         />
 
         <Route
-          path="/projects/edit/:projectId"
+          path="/rides/edit/:ridesId"
           element={
             <IsPrivate>
               {" "}
