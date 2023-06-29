@@ -11,12 +11,23 @@ function AddRide(props) {
   const [driver, setDriver] = useState("");
   const [vehicle, setVehicle] = useState("");
   const [vehicleImage, setVehicleImage] = useState("");
-  const [probationalDriversLicense, setProbationalDriversLicense] = useState("");
+  const [probationalDriversLicense, setProbationalDriversLicense] =
+    useState("");
   const [carSharing, setCarSharing] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { toCity, fromCity, intervalOfRide, seats, driver, vehicle, vehicleImage, probationalDriversLicense, carSharing};
+    const requestBody = {
+      toCity,
+      fromCity,
+      intervalOfRide,
+      seats,
+      driver,
+      vehicle,
+      vehicleImage,
+      probationalDriversLicense,
+      carSharing,
+    };
 
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -37,7 +48,7 @@ function AddRide(props) {
         setVehicleImage("");
         setProbationalDriversLicense("");
         setCarSharing("");
-        props.refreshProjects();
+        props.refreshRides();
       })
       .catch((error) => console.log(error));
   };
@@ -47,7 +58,7 @@ function AddRide(props) {
       <h3>Add Ride</h3>
 
       <form onSubmit={handleSubmit}>
-      <label>From City:</label>
+        <label>From City:</label>
         <input
           type="text"
           name="From City"
@@ -110,7 +121,6 @@ function AddRide(props) {
           value={carSharing}
           onChange={(e) => setCarSharing(e.target.value)}
         />
-
 
         <button type="submit">Submit</button>
       </form>
