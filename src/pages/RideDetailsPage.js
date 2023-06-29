@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import AddTask from "../components/AddTask";
-import TaskCard from "../components/TaskCard";
+import AddVehicle from "../components/AddVehicle";
+import VehicleCard from "../components/VehicleCard";
 
 const API_URL = "http://localhost:5005";
 
@@ -34,14 +34,21 @@ function RideDetailsPage(props) {
     <div className="RideDetails">
       {ride && (
         <>
-          <h1>{ride.title}</h1>
-          <p>{ride.description}</p>
+          <h1>{ride.toCity}</h1>
+          <h1>{ride.fromCity}</h1>
+          <p>{ride.intervalOfRides}</p>
+          <p>{ride.seats}</p>
+          <p>{ride.driver}</p>
+          <p>{ride.vehicle}</p>
+          <p>{ride.vehicleImage}</p>
+          <p>{ride.probationalDriversLicense}</p>
+          <p>{ride.carSharing}</p>
         </>
       )}
 
-      <AddTask refreshRide={getRide} rideId={rideId} />
+      <AddVehicle refreshRide={getRide} rideId={rideId} />
 
-      {ride && ride.tasks.map((task) => <TaskCard key={task._id} {...task} />)}
+      {ride && ride.vehicles.map((vehicle) => <VehicleCard key={vehicle._id} {...vehicle} />)}
 
       <Link to="/explore">
         <button>Back to explore</button>
