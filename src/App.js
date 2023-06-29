@@ -1,5 +1,5 @@
 import "./App.css";
-import { Routes, Router, Route } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import ExplorePage from "./pages/ExplorePage";
@@ -16,7 +16,6 @@ function App() {
       <Navbar />
 
       <Routes>
-        
         <Route path="/" element={<HomePage />} />
 
         <Route
