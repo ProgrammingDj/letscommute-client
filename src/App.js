@@ -23,8 +23,7 @@ function App() {
           path="/rides"
           element={
             <IsPrivate>
-              {" "}
-              <ExplorePage />{" "}
+              <ExplorePage />
             </IsPrivate>
           }
         />
@@ -33,8 +32,7 @@ function App() {
           path="/rides/:ridesId"
           element={
             <IsPrivate>
-              {" "}
-              <RideDetailsPage />{" "}
+              <RideDetailsPage />
             </IsPrivate>
           }
         />
@@ -43,8 +41,7 @@ function App() {
           path="/rides/edit/:ridesId"
           element={
             <IsPrivate>
-              {" "}
-              <EditRidePage />{" "}
+              <EditRidePage />
             </IsPrivate>
           }
         />
@@ -53,8 +50,7 @@ function App() {
           path="/signup"
           element={
             <IsAnon>
-              {" "}
-              <SignupPage />{" "}
+              <SignupPage />
             </IsAnon>
           }
         />
@@ -62,8 +58,7 @@ function App() {
           path="/login"
           element={
             <IsAnon>
-              {" "}
-              <LoginPage />{" "}
+              <LoginPage />
             </IsAnon>
           }
         />
