@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AddRide from "../components/AddProject";
-import RideCard from "../components/ProjectCard";
+import AddRide from "../components/AddRide";
+import RideCard from "../components/RideCard";
 
 const API_URL = "http://localhost:5005";
 
