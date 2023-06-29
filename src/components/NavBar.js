@@ -3,8 +3,12 @@ import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
 
 function Navbar() {
+  // Subscribe to the AuthContext to gain access to
+  // the values from AuthContext.Provider `value` prop
   const { isLoggedIn, user, logOutUser } = useContext(AuthContext);
 
+  //  Update the rendering logic to display different content
+  //  depending on whether the user is logged in or not
   return (
     <nav>
       <Link to="/">
