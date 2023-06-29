@@ -36,7 +36,7 @@ function RideDetailsPage(props) {
         <>
           <h1>{ride.toCity}</h1>
           <h1>{ride.fromCity}</h1>
-          <p>{ride.intervalOfRides}</p>
+          <p>{ride.intervalOfRide}</p>
           <p>{ride.seats}</p>
           <p>{ride.driver}</p>
           <p>{ride.vehicle}</p>
