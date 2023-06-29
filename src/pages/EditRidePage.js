@@ -35,7 +35,8 @@ function EditRidePage(props) {
         setDriver(oneRide.driver);
         setVehicle(oneRide.vehicle);
         setVehicleImage(oneRide.vehicleImage);
-        setProbationalDriversLicense(oneRide.carSharing);
+        setProbationalDriversLicense(oneRide.probationalDriversLicense);
+        setCarSharing(oneRide.carSharing);
 
       })
       .catch((error) => console.log(error));
@@ -43,7 +44,7 @@ function EditRidePage(props) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { title, description };
+    const requestBody = { toCity, fromCity, intervalOfRide, seats, driver, vehicle, vehicleImage, probationalDriversLicense, carSharing};
 
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
