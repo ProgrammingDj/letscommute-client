@@ -1,3 +1,4 @@
+import "./NavBar.css";
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../context/auth.context";
@@ -10,7 +11,8 @@ function Navbar() {
   //  Update the rendering logic to display different content
   //  depending on whether the user is logged in or not
   return (
-    <nav>
+    <nav className="navbar">
+      <img className="logo" src="../images/logo2.png" alt="React Image" />
       <Link to="/">
         <button>Home</button>
       </Link>
