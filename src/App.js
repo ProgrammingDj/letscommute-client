@@ -1,23 +1,72 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import Navbar from "./components/NavBar";
+import HomePage from "./pages/HomePage";
+import ExplorePage from "./pages/ExplorePage";
+/*import ProjectDetailsPage from "./pages/ProjectDetailsPage";
+import EditProjectPage from "./pages/EditProjectPage";*/
+import SignupPage from "./pages/SignupPage";
+import LoginPage from "./pages/LoginPage";
+/*import IsPrivate from "./components/IsPrivate";
+import IsAnon from "./components/IsAnon";*/
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+
+        <Route
+          path="/explore"
+          element={
+            <IsPrivate>
+              {" "}
+              <ExplorePage />{" "}
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/projects/:projectId"
+          element={
+            <IsPrivate>
+              {" "}
+              <ProjectDetailsPage />{" "}
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/projects/edit/:projectId"
+          element={
+            <IsPrivate>
+              {" "}
+              <EditProjectPage />{" "}
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/signup"
+          element={
+            <IsAnon>
+              {" "}
+              <SignupPage />{" "}
+            </IsAnon>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <IsAnon>
+              {" "}
+              <LoginPage />{" "}
+            </IsAnon>
+          }
+        />
+      </Routes>
     </div>
   );
 }
