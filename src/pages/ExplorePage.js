@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import AddProject from "../components/AddProject";
-import ProjectCard from "../components/ProjectCard";
+import AddRide from "../components/AddProject";
+import RideCard from "../components/ProjectCard";
 
 const API_URL = "http://localhost:5005";
 
@@ -28,11 +28,11 @@ function ExplorePage() {
   }, []);
 
   return (
-    <div className="ProjectListPage">
-      <AddProject refreshRides={getAllRides} />
+    <div className="RideListPage">
+      <AddRide refreshRides={getAllRides} />
 
       {rides.map((rides) => (
-        <ProjectCard key={rides._id} {...rides} />
+        <RideCard key={rides._id} {...rides} />
       ))}
     </div>
   );
