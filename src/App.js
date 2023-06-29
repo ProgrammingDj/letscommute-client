@@ -3,8 +3,8 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import ExplorePage from "./pages/ExplorePage";
-import ProjectDetailsPage from "./pages/ProjectDetailsPage";
-import EditProjectPage from "./pages/EditProjectPage";
+import RideDetailsPage from "./pages/RideDetailsPage";
+import EditRidePage from "./pages/EditRidePage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/isPrivate";
@@ -33,7 +33,7 @@ function App() {
           element={
             <IsPrivate>
               {" "}
-              <ProjectDetailsPage />{" "}
+              <RideDetailsPage />{" "}
             </IsPrivate>
           }
         />
@@ -43,7 +43,7 @@ function App() {
           element={
             <IsPrivate>
               {" "}
-              <EditProjectPage />{" "}
+              <EditRidePage />{" "}
             </IsPrivate>
           }
         />

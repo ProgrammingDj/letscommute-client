@@ -28,7 +28,7 @@ function AddTask(props) {
         setDescription("");
 
         // Invoke the callback function coming through the props
-        // from the ProjectDetailsPage, to refresh the project details
+        // from the RideDetailsPage, to refresh the project details
         props.refreshProject();
       })
       .catch((error) => console.log(error));

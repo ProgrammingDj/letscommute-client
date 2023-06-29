@@ -54,4 +54,4 @@ function RideDetailsPage(props) {
   );
 }
 
-export default ProjectDetailsPage;
+export default RideDetailsPage;
