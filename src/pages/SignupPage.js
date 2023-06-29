@@ -67,7 +67,7 @@ function SignupPage(props) {
         />
         <label>Profile image:</label>
         <input
-          type="img"
+          type="file"
           name="profileImage"
           value={profileImage}
           onChange={handleProfileImage}
