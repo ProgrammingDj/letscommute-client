@@ -1,9 +1,8 @@
+import "./HomePage.css";
+
+
 function HomePage() {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  );
+  return <div className="cover"></div>;
 }
 
 export default HomePage;

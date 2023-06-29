@@ -1,0 +1,10 @@
+.cover {
+  margin: 0;
+  background-image: url(/public/images/cover.png);
+  background-attachment: fixed;
+  background-color: #cccccc;
+  height: 600px;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

@@ -1,25 +1,36 @@
 body {
   margin: 0;
+
 }
- 
+
 a {
   list-style: none;
   color: black;
 }
- 
+
 button,
 select {
   padding: 5px 10px;
   min-width: 50px;
   margin: 5px;
   font-size: 18px;
+  background-color: #facf39;
+  color: #3f72af;
+  border: none;
+  transition-duration: 0.4s;
+  border-radius: 8px;
 }
- 
+
+button:hover {
+  background-color: #4caf4f00; /* Green */
+  color: white;
+}
+
 label {
   width: 200px;
   display: block;
 }
- 
+
 input,
 textarea {
   width: 200px;
@@ -27,7 +38,7 @@ textarea {
   display: inline-block;
   margin: 10px;
 }
- 
+
 .Navbar {
   background: #515f7d;
   color: white;
@@ -37,14 +48,14 @@ textarea {
   margin-bottom: 15px;
   padding: 5px;
 }
- 
+
 .Navbar li {
   list-style: none;
   color: white;
   font-size: 24px;
   font-weight: 600;
 }
- 
+
 .card {
   width: 400px;
   padding: 10px;
@@ -54,15 +65,15 @@ textarea {
   background: #94a7c8;
   border-radius: 4px;
 }
- 
+
 .ProjectCard h3::after {
   content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
   margin-left: 5px;
 }
- 
+
 .EditProjectPage,
-.AddProject,
-.AddTask {
+.AddRide,
+.AddVehicle {
   background: #f9eec3;
   border: 1px solid grey;
   box-shadow: 0px 2px 3px grey;
@@ -73,24 +84,24 @@ textarea {
   padding: 10px;
   border-radius: 4px;
 }
- 
-.EditProjectPage {
+
+.EditRidePage {
   background-color: rgb(239, 196, 88);
 }
- 
-.EditProjectPage form,
-.AddTask form,
-.AddProject form {
+
+.EditRidePage form,
+.AddRide form,
+.AddVehicle form {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
- 
-.AddTask button,
-.AddProject button {
+
+.AddRide button,
+.AddVehicle button {
   display: block;
 }
- 
-.TaskCard {
+
+.RideCard {
   background-color: #dfeef9;
 }
