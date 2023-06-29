@@ -3,12 +3,12 @@ import { Routes, Route } from "react-router-dom";
 import Navbar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import ExplorePage from "./pages/ExplorePage";
-/*import ProjectDetailsPage from "./pages/ProjectDetailsPage";
-import EditProjectPage from "./pages/EditProjectPage";*/
+import ProjectDetailsPage from "./pages/ProjectDetailsPage";
+import EditProjectPage from "./pages/EditProjectPage";
 import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
-/*import IsPrivate from "./components/IsPrivate";
-import IsAnon from "./components/IsAnon";*/
+import IsPrivate from "./components/isPrivate";
+import IsAnon from "./components/isAnon";
 
 function App() {
   return (
