@@ -13,7 +13,9 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="../images/logo2.png" alt="React Image" />
+        <Link to="/">
+          <img src="../images/logo2.png" alt="React Image" />
+        </Link>
       </div>
       <div className="menu">
         <Link to="/">

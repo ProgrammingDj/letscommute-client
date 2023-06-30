@@ -87,7 +87,7 @@ function SignupPage(props) {
         <label>Driver:</label>
         <input
           type="text"
-          name="Driver"
+          name="driver"
           value={driver}
           onChange={handleDriver}
         />
