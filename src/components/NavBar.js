@@ -18,6 +18,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="menu">
+      <span>{user && user.name}</span>
         <Link to="/">
           <button>Home</button>
         </Link>
@@ -37,7 +38,6 @@ function Navbar() {
           </div>
           <div className="menu">
             <button onClick={logOutUser}>Logout</button>
-            <span>{user && user.name}</span>
           </div>
         </>
       )}
