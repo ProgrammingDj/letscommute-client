@@ -48,13 +48,16 @@ function RideDetailsPage(props) {
 
       <AddVehicle refreshRide={getRide} rideId={rideId} />
 
-      {ride && ride.vehicles.map((vehicle) => <VehicleCard key={vehicle._id} {...vehicle} />)}
+      {ride &&
+        ride.vehicles.map((vehicle) => (
+          <VehicleCard key={vehicle._id} {...vehicle} />
+        ))}
 
-      <Link to="/explore">
+      <Link to="/rides">
         <button>Back to explore</button>
       </Link>
 
-      <Link to={`/explore/edit/${rideId}`}>
+      <Link to={`/rides/edit/${rideId}`}>
         <button>Edit Ride</button>
       </Link>
     </div>
