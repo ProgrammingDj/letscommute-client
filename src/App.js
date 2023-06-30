@@ -10,6 +10,7 @@ import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/isPrivate";
 import IsAnon from "./components/isAnon";
 import AddRidePage from "./pages/AddRidePage";
+import MyRidesPage from "./pages/MyRidesPage"
 
 function App() {
   return (
@@ -33,6 +34,15 @@ function App() {
           element={
             <IsPrivate>
               <AddRidePage />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/rides/myrides"
+          element={
+            <IsPrivate>
+              <MyRidesPage />
             </IsPrivate>
           }
         />
