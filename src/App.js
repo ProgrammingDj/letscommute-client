@@ -9,6 +9,7 @@ import SignupPage from "./pages/SignupPage";
 import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/isPrivate";
 import IsAnon from "./components/isAnon";
+import AddRidePage from "./pages/AddRidePage";
 
 function App() {
   return (
@@ -23,6 +24,15 @@ function App() {
           element={
             <IsPrivate>
               <ExplorePage />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/rides/addride"
+          element={
+            <IsPrivate>
+              <AddRidePage />
             </IsPrivate>
           }
         />
