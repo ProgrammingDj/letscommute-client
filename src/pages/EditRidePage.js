@@ -9,7 +9,6 @@ function EditRidePage(props) {
   const [toCity, setToCity] = useState("");
   const [intervalOfRide, setIntervalOfRide] = useState("");
   const [seats, setSeats] = useState("");
-  const [driver, setDriver] = useState("");
   const [vehicle, setVehicle] = useState("");
 
   const { rideId } = useParams();
