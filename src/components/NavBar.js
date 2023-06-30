@@ -18,7 +18,7 @@ function Navbar() {
         </Link>
       </div>
       <div className="menu">
-        <span>{user && <span>Hi, {user.name}</span>}</span>
+        <span>{user && <span className="greetUser">Hi, {user.name}</span>}</span>
         <Link to="/">
           <button>Home</button>
         </Link>
