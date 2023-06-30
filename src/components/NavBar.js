@@ -29,6 +29,11 @@ function Navbar() {
             </Link>
           </div>
           <div className="menu">
+            <Link to="/rides/AddRide">
+              <button>Add Ride</button>
+            </Link>
+          </div>
+          <div className="menu">
             <button onClick={logOutUser}>Logout</button>
             <span>{user && user.name}</span>
           </div>

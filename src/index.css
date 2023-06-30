@@ -1,6 +1,6 @@
 body {
   margin: 0;
-
+  background-color: #94a7c8;
 }
 
 a {
@@ -15,10 +15,11 @@ select {
   margin: 5px;
   font-size: 18px;
   background-color: #facf39;
-  color: #3f72af;
+  color: #5f8cc3;
   border: none;
   transition-duration: 0.4s;
   border-radius: 8px;
+  cursor: pointer;
 }
 
 button:hover {
