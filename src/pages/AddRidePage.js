@@ -37,8 +37,6 @@ function AddRidePage(props) {
         seats,
         driver,
         vehicle,
-        vehicleImage,
-        probationalDriversLicense,
       };
   
       // Make an axios request to the API
