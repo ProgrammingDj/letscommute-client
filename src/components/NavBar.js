@@ -12,31 +12,41 @@ function Navbar() {
   //  depending on whether the user is logged in or not
   return (
     <nav className="navbar">
-      <img className="logo" src="../images/logo2.png" alt="React Image" />
-      <Link to="/">
-        <button>Home</button>
-      </Link>
+      <div className="logo">
+        <img src="../images/logo2.png" alt="React Image" />
+      </div>
+      <div className="menu">
+        <Link to="/">
+          <button>Home</button>
+        </Link>
+      </div>
 
       {isLoggedIn && (
         <>
-          <Link to="/rides">
-            <button>Explore</button>
-          </Link>
-          <button onClick={logOutUser}>Logout</button>
-          <span>{user && user.name}</span>
+          <div className="menu">
+            <Link to="/rides">
+              <button>Explore</button>
+            </Link>
+          </div>
+          <div className="menu">
+            <button onClick={logOutUser}>Logout</button>
+            <span>{user && user.name}</span>
+          </div>
         </>
       )}
 
       {!isLoggedIn && (
         <>
-          <Link to="/signup">
-            {" "}
-            <button>Sign Up</button>{" "}
-          </Link>
-          <Link to="/login">
-            {" "}
-            <button>Login</button>{" "}
-          </Link>
+          <div className="menu">
+            <Link to="/signup">
+              <button>Sign Up</button>
+            </Link>
+          </div>
+          <div className="menu">
+            <Link to="/login">
+              <button>Login</button>
+            </Link>
+          </div>
         </>
       )}
     </nav>
