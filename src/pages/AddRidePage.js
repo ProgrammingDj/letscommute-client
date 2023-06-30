@@ -16,7 +16,7 @@ function AddRidePage(props) {
     const [vehicle, setVehicle] = useState("");
     const [vehicleImage, setVehicleImage] = useState("");
     const [probationalDriversLicense, setProbationalDriversLicense] = useState("");
-    const [carSharing, setCarSharing] = useState("");
+
     
   
     const navigate = useNavigate();
@@ -29,7 +29,7 @@ function AddRidePage(props) {
     const handleVehicle = (e) => setVehicle(e.target.value);
     const handleVehicleImage= (e) => setVehicleImage(e.target.value);
     const handleProbationaryDriversLicense = (e) => setProbationalDriversLicense(e.target.value);
-    const handleCarSharing = (e) => setCarSharing(e.target.value);
+
   
     const handleAddRideSubmit = (e) => {
       e.preventDefault();
@@ -43,7 +43,6 @@ function AddRidePage(props) {
         vehicle,
         vehicleImage,
         probationalDriversLicense,
-        carSharing,
       };
   
       // Make an axios request to the API
@@ -118,13 +117,6 @@ function AddRidePage(props) {
             onChange={handleProbationaryDriversLicense}
           />
 
-            <label>Carsharing:</label>
-          <input
-            type="text"
-            name="carsharing"
-            value={carSharing}
-            onChange={handleCarSharing}
-          />
           <br/>
   
           <button type="submit">Add Ride</button>

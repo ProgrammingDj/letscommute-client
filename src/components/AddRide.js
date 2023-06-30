@@ -90,27 +90,6 @@ function AddRide(props) {
           onChange={(e) => setVehicle(e.target.value)}
         />
 
-        <label>VehicleImage:</label>
-        <textarea
-          name="VehicleImage"
-          value={vehicleImage}
-          onChange={(e) => setVehicleImage(e.target.value)}
-        />
-
-        <label>Probational Driver's License:</label>
-        <textarea
-          name="Probational Driver's License"
-          value={probationalDriversLicense}
-          onChange={(e) => setProbationalDriversLicense(e.target.value)}
-        />
-
-        <label>Carsharing:</label>
-        <textarea
-          name="Carsharing"
-          value={carSharing}
-          onChange={(e) => setCarSharing(e.target.value)}
-        />
-
 
         <button type="submit">Submit</button>
       </form>

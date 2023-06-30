@@ -9,7 +9,6 @@ function VehicleCard({ driver, vehicle, vehicleImage, probationalDriversLicense,
           <p>{vehicle}</p>
           <p>{vehicleImage}</p>
           <p>{probationalDriversLicense}</p>
-          <p>{carSharing}</p>
       </Link>
     </div>
   );

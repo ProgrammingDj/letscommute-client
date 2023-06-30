@@ -13,7 +13,6 @@ function RideCard({ toCity, fromCity, intervalOfRide, seats, driver, vehicle, ve
           <p>{vehicle}</p>
           <p>{vehicleImage}</p>
           <p>{probationalDriversLicense}</p>
-          <p>{carSharing}</p>
       </Link>
     </div>
   );

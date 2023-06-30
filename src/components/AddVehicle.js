@@ -73,13 +73,6 @@ function AddVehicle(props) {
           onChange={(e) => setProbationalDriversLicense(e.target.value)}
         />
 
-        <label>Carsharing:</label>
-        <textarea
-          name="Carsharing"
-          value={carSharing}
-          onChange={(e) => setCarSharing(e.target.value)}
-        />
-
 
 
         <button type="submit">Add Vehicle</button>

@@ -36,7 +36,7 @@ function EditRidePage(props) {
         setVehicle(oneRide.vehicle);
         setVehicleImage(oneRide.vehicleImage);
         setProbationalDriversLicense(oneRide.probationalDriversLicense);
-        setCarSharing(oneRide.carSharing);
+
 
       })
       .catch((error) => console.log(error));
@@ -134,12 +134,6 @@ function EditRidePage(props) {
           onChange={(e) => setProbationalDriversLicense(e.target.value)}
         />
 
-        <label>Carsharing:</label>
-        <textarea
-          name="Carsharing"
-          value={carSharing}
-          onChange={(e) => setCarSharing(e.target.value)}
-        />
 
         <button type="submit">Update Ride</button>
       </form>
