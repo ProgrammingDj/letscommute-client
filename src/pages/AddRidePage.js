@@ -14,9 +14,7 @@ function AddRidePage(props) {
     const [errorMessage, setErrorMessage] = useState(undefined);
     const [driver, setDriver] = useState("");
     const [vehicle, setVehicle] = useState("");
-    const [vehicleImage, setVehicleImage] = useState("");
-    const [probationalDriversLicense, setProbationalDriversLicense] = useState("");
-
+   
     
   
     const navigate = useNavigate();
@@ -27,9 +25,7 @@ function AddRidePage(props) {
     const handleSeats = (e) => setSeats(e.target.value);
     const handleDriver = (e) => setDriver(e.target.value);
     const handleVehicle = (e) => setVehicle(e.target.value);
-    const handleVehicleImage= (e) => setVehicleImage(e.target.value);
-    const handleProbationaryDriversLicense = (e) => setProbationalDriversLicense(e.target.value);
-
+   
   
     const handleAddRideSubmit = (e) => {
       e.preventDefault();
@@ -99,22 +95,6 @@ function AddRidePage(props) {
             name="vehicle"
             value={vehicle}
             onChange={handleVehicle}
-          />
-
-            <label>Vehicle Image:</label>
-          <input
-            type="file"
-            name="vehicle Image"
-            value={vehicleImage}
-            onChange={handleVehicleImage}
-          />
-
-            <label>Probational Driver's License:</label>
-          <input
-            type="text"
-            name="Probational Drivers License"
-            value={probationalDriversLicense}
-            onChange={handleProbationaryDriversLicense}
           />
 
           <br/>
