@@ -11,9 +11,6 @@ function EditRidePage(props) {
   const [seats, setSeats] = useState("");
   const [driver, setDriver] = useState("");
   const [vehicle, setVehicle] = useState("");
-  const [vehicleImage, setVehicleImage] = useState("");
-  const [probationalDriversLicense, setProbationalDriversLicense] = useState("");
-  const [carSharing, setCarSharing] = useState("");
 
   const { rideId } = useParams();
   const navigate = useNavigate();
@@ -34,9 +31,6 @@ function EditRidePage(props) {
         setSeats(oneRide.seats);
         setDriver(oneRide.driver);
         setVehicle(oneRide.vehicle);
-        setVehicleImage(oneRide.vehicleImage);
-        setProbationalDriversLicense(oneRide.probationalDriversLicense);
-
 
       })
       .catch((error) => console.log(error));
@@ -44,7 +38,7 @@ function EditRidePage(props) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { toCity, fromCity, intervalOfRide, seats, driver, vehicle, vehicleImage, probationalDriversLicense, carSharing};
+    const requestBody = { toCity, fromCity, intervalOfRide, seats, vehicle};
 
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -106,32 +100,11 @@ function EditRidePage(props) {
           onChange={(e) => setSeats(e.target.value)}
         />
 
-        <label>Driver:</label>
-        <textarea
-          name="Driver"
-          value={driver}
-          onChange={(e) => setDriver(e.target.value)}
-        />
-
         <label>Vehicle:</label>
         <textarea
           name="vehicle"
           value={vehicle}
           onChange={(e) => setVehicle(e.target.value)}
-        />
-
-        <label>VehicleImage:</label>
-        <textarea
-          name="VehicleImage"
-          value={vehicleImage}
-          onChange={(e) => setVehicleImage(e.target.value)}
-        />
-
-        <label>Probational Driver's License:</label>
-        <textarea
-          name="Probational Driver's License"
-          value={probationalDriversLicense}
-          onChange={(e) => setProbationalDriversLicense(e.target.value)}
         />
 
 
