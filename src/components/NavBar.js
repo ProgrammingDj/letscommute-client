@@ -42,6 +42,11 @@ function Navbar() {
             </Link>
           </div>
           <div className="menu">
+            <Link to="/rides/:userId">
+              <button>Profile</button>
+            </Link>
+          </div>
+          <div className="menu">
             <button onClick={logOutUser}>Logout</button>
           </div>
         </>

@@ -11,7 +11,7 @@ import IsPrivate from "./components/isPrivate";
 import IsAnon from "./components/isAnon";
 import AddRidePage from "./pages/AddRidePage";
 import MyRidesPage from "./pages/MyRidesPage"
-
+import ProfilePage from "./pages/ProfilePage";
 function App() {
   return (
     <div className="App">
@@ -52,6 +52,15 @@ function App() {
           element={
             <IsPrivate>
               <RideDetailsPage />
+            </IsPrivate>
+          }
+        />
+
+        <Route
+          path="/rides/:userId"
+          element={
+            <IsPrivate>
+              <ProfilePage />
             </IsPrivate>
           }
         />

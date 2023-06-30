@@ -28,7 +28,6 @@ function EditRidePage(props) {
         setFromCity(oneRide.fromCity);
         setIntervalOfRide(oneRide.intervalOfRide);
         setSeats(oneRide.seats);
-        setDriver(oneRide.driver);
         setVehicle(oneRide.vehicle);
 
       })
