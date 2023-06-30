@@ -47,6 +47,7 @@ function SignupPage(props) {
       })
       .catch((error) => {
         const errorDescription = error.response.data.message;
+        console.log(errorDescription);
         setErrorMessage(errorDescription);
       });
   };
