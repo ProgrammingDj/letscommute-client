@@ -3,7 +3,7 @@ import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
-
+ç
 function ProfilePage(props) {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");

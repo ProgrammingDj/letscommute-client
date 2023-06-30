@@ -71,7 +71,7 @@ function AddVehicle(props) {
           name="Probational Driver's License"
           value={probationalDriversLicense}
           onChange={(e) => setProbationalDriversLicense(e.target.value)}
-        />
+        /> 
 
 
 

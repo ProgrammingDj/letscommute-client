@@ -12,6 +12,7 @@ import IsAnon from "./components/isAnon";
 import AddRidePage from "./pages/AddRidePage";
 import MyRidesPage from "./pages/MyRidesPage"
 import ProfilePage from "./pages/ProfilePage";
+
 function App() {
   return (
     <div className="App">
