@@ -11,12 +11,23 @@ function AddRide(props) {
   const [driver, setDriver] = useState("");
   const [vehicle, setVehicle] = useState("");
   const [vehicleImage, setVehicleImage] = useState("");
-  const [probationalDriversLicense, setProbationalDriversLicense] = useState("");
+  const [probationalDriversLicense, setProbationalDriversLicense] =
+    useState("");
   const [carSharing, setCarSharing] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { toCity, fromCity, intervalOfRide, seats, driver, vehicle, vehicleImage, probationalDriversLicense, carSharing};
+    const requestBody = {
+      toCity,
+      fromCity,
+      intervalOfRide,
+      seats,
+      driver,
+      vehicle,
+      vehicleImage,
+      probationalDriversLicense,
+      carSharing,
+    };
 
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -47,7 +58,7 @@ function AddRide(props) {
       <h3>Add Ride</h3>
 
       <form onSubmit={handleSubmit}>
-      <label>From City:</label>
+        <label>From City:</label>
         <input
           type="text"
           name="From City"
@@ -56,40 +67,64 @@ function AddRide(props) {
         />
 
         <label>To City:</label>
-        <textarea
+        <input
+          type="text"
           name="To City"
           value={toCity}
           onChange={(e) => setToCity(e.target.value)}
         />
 
-        <label>Interval of ride:</label>
-        <textarea
-          name="Interval of ride"
-          value={intervalOfRide}
+        <label for="intervalOfRide">Interval of ride:</label>
+        <select
+          id="intervalOfRide"
+          name="intervalOfRide"
+          size="1"
           onChange={(e) => setIntervalOfRide(e.target.value)}
-        />
+          value={intervalOfRide}
+        >
+          <option value="multible">Multiple times a Week</option>
+          <option value="onceWeek">Once a Week</option>
+          <option value="twoWeeks">Every 2 Weeks</option>
+          <option value="threeWeeks">Every 3 Weeks</option>
+          <option value="onceMonth">Once a month</option>
+        </select>
 
-        <label>Seats:</label>
-        <textarea
-          name="Seats"
-          value={seats}
+        <label for="intervalOfRide">Seats:</label>
+        <select
+          id="seats"
+          name="seats"
+          size="1"
           onChange={(e) => setSeats(e.target.value)}
-        />
+          value={seats}
+        >
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
 
         <label>Driver:</label>
-        <textarea
+        <input
+          type="text"
           name="Driver"
           value={driver}
           onChange={(e) => setDriver(e.target.value)}
         />
 
-        <label>Vehicle:</label>
-        <textarea
+        <label for="vehicle">Vehicle:</label>
+        <select
+          id="vehicle"
           name="vehicle"
-          value={vehicle}
+          size="1"
           onChange={(e) => setVehicle(e.target.value)}
-        />
-
+          value={vehicle}
+        >
+          <option value="{vehicle}">1</option>
+          <option value="{vehicle}">2</option>
+          <option value="{vehicle}">3</option>
+        </select>
 
         <button type="submit">Submit</button>
       </form>
