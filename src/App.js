@@ -48,14 +48,7 @@ function App() {
           }
         />
 
-        <Route
-          path="/rides/:ridesId"
-          element={
-            <IsPrivate>
-              <RideDetailsPage />
-            </IsPrivate>
-          }
-        />
+
 
         <Route
           path="/rides/:userId"
@@ -66,6 +59,15 @@ function App() {
           }
         />
 
+        <Route
+          path="/rides/:ridesId"
+          element={
+            <IsPrivate>
+              <RideDetailsPage />
+            </IsPrivate>
+          }
+        />
+        
         <Route
           path="/rides/edit/:ridesId"
           element={

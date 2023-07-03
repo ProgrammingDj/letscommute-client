@@ -21,7 +21,7 @@ function ProfilePage(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get(`${API_URL}/api/rides/${userId}`, {
+      .post(`${API_URL}/api/rides/${userId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -62,9 +62,9 @@ function ProfilePage(props) {
       .delete(`${API_URL}/api/rides/${userId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-//      .then(() => {
- //       navigate("/rides");
-//      })
+      .then(() => {
+        navigate("/rides");
+      })
       .catch((err) => console.log(err));
   };
 
