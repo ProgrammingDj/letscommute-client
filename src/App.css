@@ -1,15 +1,11 @@
-
-
 .App {
   text-align: center;
-  
-  
 }
 
 .loginPage {
   background-color: #3f72af;
   width: 400px;
-  border-radius: 8px; 
+  border-radius: 8px;
   margin: 50px auto;
   padding: 10px 20px;
 }
@@ -17,29 +13,41 @@
 .signupPage {
   background-color: #3f72af;
   width: 400px;
-  border-radius: 8px; 
+  border-radius: 8px;
   margin: 50px auto;
   padding: 10px 20px;
 }
 
-label{
-	color: #fff;
-	font-size: 1.3em;
-	justify-content: left;
-	display: flex;
-	margin: 10px;
-	font-weight: bold;
-	transition: .5s ease-in-out;
+.addRide {
+  background-color: #3f72af;
+  width: 400px;
+  border-radius: 8px;
+  margin: 50px auto;
+  padding: 10px 20px;
 }
-input{
-	width: 90%;
-	height: 20px;
-	background: #e0dede;
-	justify-content: center;
-	display: flex;
-	margin: 10px auto;
-	padding: 10px;
+
+#intervalOfRide option{
+  width:1500px;   
+}
+
+label {
+  color: #fff;
+  font-size: 1.3em;
+  justify-content: left;
+  display: flex;
+  margin: 10px;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+}
+input {
+  width: 90%;
+  height: 20px;
+  background: #e0dede;
+  justify-content: center;
+  display: flex;
+  margin: 10px auto;
+  padding: 10px;
   border: none;
-	border-radius: 5px;
+  border-radius: 5px;
   cursor: pointer;
 }

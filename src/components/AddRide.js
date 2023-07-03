@@ -54,7 +54,7 @@ function AddRide(props) {
   };
 
   return (
-    <div className="AddRide">
+    <div className="addRide">
       <h3>Add Ride</h3>
 
       <form onSubmit={handleSubmit}>
