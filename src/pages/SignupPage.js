@@ -53,7 +53,7 @@ function SignupPage(props) {
   };
 
   return (
-    <div className="SignupPage">
+    <div className="signupPage">
       <h1>Sign Up</h1>
 
       <form onSubmit={handleSignupSubmit}>
