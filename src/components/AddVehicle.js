@@ -42,7 +42,6 @@ function AddVehicle(props) {
 
   return (
     <div className="AddVehicle">
-      <h3>Add New Vehicle</h3>
 
       <form onSubmit={handleSubmit}>
       <label>Driver:</label>

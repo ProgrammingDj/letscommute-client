@@ -3,7 +3,7 @@ import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import AddVehicle from "../components/AddVehicle";
 import VehicleCard from "../components/VehicleCard";
-
+import AddRide from "../components/AddRide";
 const API_URL = "http://localhost:5005";
 
 function RideDetailsPage(props) {
@@ -45,7 +45,7 @@ function RideDetailsPage(props) {
           <p>{ride.carSharing}</p>
         </>
       )}
-
+      <AddRide refreshRide={getRide} rideId={rideId} />
       <AddVehicle refreshRide={getRide} rideId={rideId} />
 
       {ride &&

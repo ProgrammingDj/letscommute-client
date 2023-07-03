@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 // We are deconstructing props object directly in the parentheses of the function
-function RideCard({ toCity, fromCity, intervalOfRide, seats, driver, vehicle, vehicleImage, probationalDriversLicense, carSharing, id }) {
+function RideCard({ toCity, fromCity, intervalOfRide, seats, driver, vehicle, vehicleImage, probationalDriversLicense, id }) {
   return (
     <div className="RideCard card">
       <Link to={`/rides/${id}`}>
