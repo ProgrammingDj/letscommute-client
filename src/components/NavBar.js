@@ -31,24 +31,29 @@ function Navbar() {
               <button>Explore</button>
             </Link>
           </div>
+
+          <div className="menu">
+            <Link to="/rides/addvehicle">
+              <button>Add Vehicle</button>
+            </Link>
+          </div>
+
           <div className="menu">
             <Link to="/rides/addride">
               <button>Add Ride</button>
             </Link>
           </div>
+
           <div className="menu">
             <Link to="/rides/myrides">
               <button>My Rides</button>
             </Link>
           </div>
-          <div className="menu">
-            <Link to="/rides/:userId">
-              <button>Profile</button>
-            </Link>
-          </div>
+
           <div className="menu">
             <button onClick={logOutUser}>Logout</button>
           </div>
+          
         </>
       )}
 

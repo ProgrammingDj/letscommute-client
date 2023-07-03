@@ -5,6 +5,7 @@ import axios from "axios";
 const API_URL = "http://localhost:5005";
 
 function ProfilePage(props) {
+
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -12,6 +13,7 @@ function ProfilePage(props) {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [driver, setDriver] = useState("");
     const [probationaryDriver, setProbationaryDriver] = useState("");
+    const [vehicle, setVehicle] = useState("");
     const [vehicleImage, setVehicleImage] = useState("");
 
   const { userId } = useParams();
@@ -22,7 +24,7 @@ function ProfilePage(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get(`${API_URL}/api/rides/${userId}`, {
+      .get(`${API_URL}/api/profile/`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -31,16 +33,18 @@ function ProfilePage(props) {
         setEmail(profiledata.email);
         setPassword(profiledata.password);
         setProfileImage(profiledata.profileImage);
-        setPhoneNumber(profiledata.PhoneNumber);
-        setVehicleImage(profiledata.VehicleImage);
+        setPhoneNumber(profiledata.phoneNumber);
+        setVehicle(profiledata.vehicle);
+        setVehicleImage(profiledata.vehicleImage);
         setDriver(profiledata.driver);
-        setProbationaryDriver(profiledata.probationaryDriver);
+        setProbationaryDriver(profiledata.probationalDriver);
+        
 
       })
       .catch((error) => console.log(error));
   }, [userId]);
 
-  const handleFormSubmit = (e) => {
+  const handleProfileFormSubmit = (e) => {
     e.preventDefault();
     const requestBody = { name, email, password, profileImage, phoneNumber, driver, probationaryDriver};
 
@@ -48,24 +52,31 @@ function ProfilePage(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .put(`${API_URL}/api/rides/${userId}`, requestBody, {
+      .put(`${API_URL}/api/profile`, requestBody, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        navigate(`/rides/${userId}`);
+        navigate(`/profile`);
       });
   };
+
+  const handleVehicleFormSubmit = (e) => {
+    e.preventDefault();
+    const requestBody = {
+      vehicle,
+      vehicleImage,
+    };
 
   const deleteProfile = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .delete(`${API_URL}/api/rides/${userId}`, {
+      .delete(`${API_URL}/api/profile/`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
-        navigate("/rides");
+        navigate("/profile/");
       })
       .catch((err) => console.log(err));
   };
@@ -75,7 +86,7 @@ function ProfilePage(props) {
     <div className="ProfilePage">
       <h3>My Profile</h3>
 
-      <form onSubmit={handleFormSubmit}>
+      <form onSubmit={handleProfileFormSubmit}>
         <label>Name:</label>
         <input
           type="text"
@@ -119,8 +130,8 @@ function ProfilePage(props) {
         <div className="VehiclePage">
         <h3>My Vehicle</h3>
 
-        <form onSubmit={handleFormSubmit}>
-        <label>Model</label>
+        <form onSubmit={handleVehicleFormSubmit}>
+        <label>Model:</label>
         <input
           type="text"
           name="name"
@@ -128,7 +139,7 @@ function ProfilePage(props) {
           onChange={(e) => setName(e.target.value)}
         />
 
-        <label>Vehicle Image</label>
+        <label>Vehicle Image:</label>
         <input
         type="file"
           name="vehicleImage"
@@ -157,7 +168,7 @@ function ProfilePage(props) {
         
 
         
-        <button type="submit">Update Ride</button>
+        <button type="submit">Update Profile</button>
       </form>
     </div>
     <div>
@@ -165,6 +176,7 @@ function ProfilePage(props) {
       </div>
     </div>
   );
+}
 }
 
 

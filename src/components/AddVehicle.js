@@ -42,35 +42,21 @@ function AddVehicle(props) {
 
   return (
     <div className="AddVehicle">
-
-      <form onSubmit={handleSubmit}>
-      <label>Driver:</label>
-        <textarea
-          name="Driver"
-          value={driver}
-          onChange={(e) => setDriver(e.target.value)}
-        />
-
+      <form>
         <label>Vehicle:</label>
-        <textarea
+        <input
           name="vehicle"
           value={vehicle}
           onChange={(e) => setVehicle(e.target.value)}
         />
 
         <label>VehicleImage:</label>
-        <textarea
+        <input
+          type="file"
           name="VehicleImage"
           value={vehicleImage}
           onChange={(e) => setVehicleImage(e.target.value)}
         />
-
-        <label>Probational Driver's License:</label>
-        <textarea
-          name="Probational Driver's License"
-          value={probationalDriversLicense}
-          onChange={(e) => setProbationalDriversLicense(e.target.value)}
-        /> 
 
 
 
