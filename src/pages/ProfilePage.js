@@ -12,6 +12,7 @@ function ProfilePage(props) {
     const [phoneNumber, setPhoneNumber] = useState("");
     const [driver, setDriver] = useState("");
     const [probationaryDriver, setProbationaryDriver] = useState("");
+    const [vehicleImage, setVehicleImage] = useState("");
 
   const { userId } = useParams();
   const navigate = useNavigate();
@@ -31,6 +32,7 @@ function ProfilePage(props) {
         setPassword(profiledata.password);
         setProfileImage(profiledata.profileImage);
         setPhoneNumber(profiledata.PhoneNumber);
+        setVehicleImage(profiledata.VehicleImage);
         setDriver(profiledata.driver);
         setProbationaryDriver(profiledata.probationaryDriver);
 
@@ -69,6 +71,7 @@ function ProfilePage(props) {
   };
 
   return (
+    <div>
     <div className="ProfilePage">
       <h3>My Profile</h3>
 
@@ -110,6 +113,28 @@ function ProfilePage(props) {
           value={phoneNumber}
           onChange={(e) => setPhoneNumber(e.target.value)}
         />
+        
+        </form>
+        </div>
+        <div className="VehiclePage">
+        <h3>My Vehicle</h3>
+
+        <form onSubmit={handleFormSubmit}>
+        <label>Model</label>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+
+        <label>Vehicle Image</label>
+        <input
+        type="file"
+          name="vehicleImage"
+          value={vehicleImage}
+          onChange={(e) => setVehicleImage(e.target.value)}
+        />
 
         <label>Driver:</label>
         <input
@@ -117,7 +142,7 @@ function ProfilePage(props) {
           name="driver"
           value={driver}
           onChange={(e) => setDriver(e.target.value)}
-        />
+          />
 
         <label>Probational Drivers License:</label>
         <input
@@ -126,15 +151,21 @@ function ProfilePage(props) {
           value={probationaryDriver}
           onChange={(e) => setProbationaryDriver(e.target.value)}
         />
+
+        <br/>
+        
         
 
-
+        
         <button type="submit">Update Ride</button>
       </form>
-
+    </div>
+    <div>
       <button onClick={deleteProfile}>Delete Profile</button>
+      </div>
     </div>
   );
 }
+
 
 export default ProfilePage;
