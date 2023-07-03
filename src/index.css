@@ -70,12 +70,12 @@ textarea {
   border-radius: 4px;
 }
 
-.ProjectCard h3::after {
+.RideCard h3::after {
   content: url("https://education-team-2020.s3.eu-west-1.amazonaws.com/web-dev/m3/icon-expand.png");
   margin-left: 5px;
 }
 
-.EditProjectPage,
+.EditRidePage,
 .AddRide,
 .AddVehicle {
   background: #f9eec3;

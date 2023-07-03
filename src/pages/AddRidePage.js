@@ -1,58 +1,38 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import axios from "axios";
-import MyRidesPage from "../pages/MyRidesPage";
-import RideCard from "../components/RideCard";
 import AddRide from "../components/AddRide";
+import RideCard from "../components/RideCard";
 
 const API_URL = "http://localhost:5005";
 
-function AddRidePage(props) {
-  const [toCity, setToCity] = useState("");
-  const [fromCity, setFromCity] = useState("");
-  const [intervalOfRide, setIntervalOfRide] = useState("");
-  const [seats, setSeats] = useState("");
-  const [errorMessage, setErrorMessage] = useState(undefined);
-  const [driver, setDriver] = useState("");
-  const [vehicle, setVehicle] = useState("");
+function ExplorePage() {
+  const [rides, setRides] = useState([]);
 
-  const navigate = useNavigate();
+  const getAllRides = () => {
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem("authToken");
 
-  const handleToCity = (e) => setToCity(e.target.value);
-  const handleFromCity = (e) => setFromCity(e.target.value);
-  const handleIntervalOfRide = (e) => setIntervalOfRide(e.target.value);
-  const handleSeats = (e) => setSeats(e.target.value);
-  const handleDriver = (e) => setDriver(e.target.value);
-  const handleVehicle = (e) => setVehicle(e.target.value);
-
-  const handleAddRideSubmit = (e) => {
-    e.preventDefault();
-    // Create an object representing the request body
-    const requestBody = {
-      toCity,
-      fromCity,
-      intervalOfRide,
-      seats,
-      driver,
-      vehicle,
-    };
-
-    // Make an axios request to the API
-    // If the POST request is a successful redirect to the login page
-    // If the request resolves with an error, set the error message in the state
     axios
-      .post(`${API_URL}/rides/addride`, requestBody)
-      .then((response) => {
-        navigate("/rides/myrides");
+      .get(`${API_URL}/api/rides`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .catch((error) => {
-        const errorDescription = error.response.data.message;
-        console.log(errorDescription);
-        setErrorMessage(errorDescription);
-      });
+      .then((response) => setRides(response.data))
+      .catch((error) => console.log(error));
   };
 
-  return console.log("hello");
+  useEffect(() => {
+    getAllRides();
+  }, []);
+
+  return (
+    <div className="ListRides">
+      <AddRide refreshRides={getAllRides} />
+
+      {rides.map((ride) => (
+        <RideCard key={ride._id} {...ride} />
+      ))}
+    </div>
+  );
 }
 
-export default AddRidePage;
+export default ExplorePage;
