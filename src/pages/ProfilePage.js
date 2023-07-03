@@ -21,7 +21,7 @@ function ProfilePage(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .post(`${API_URL}/api/rides/${userId}`, {
+      .get(`${API_URL}/api/rides/${userId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
