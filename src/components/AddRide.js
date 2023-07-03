@@ -105,21 +105,12 @@ function AddRide(props) {
           <option value="6">6</option>
         </select>
 
-        <label>Driver:</label>
-        <input
-          type="text"
-          name="Driver"
-          value={driver}
-          onChange={(e) => setDriver(e.target.value)}
-        />
-
         <label for="vehicle">Vehicle:</label>
         <select
           id="vehicle"
           name="vehicle"
           size="1"
           onChange={(e) => setVehicle(e.target.value)}
-          value={vehicle}
         >
           <option value="{vehicle}">1</option>
           <option value="{vehicle}">2</option>

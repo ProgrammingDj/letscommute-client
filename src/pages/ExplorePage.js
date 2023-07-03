@@ -9,7 +9,6 @@ function ExplorePage() {
   const [rides, setRides] = useState([]);
 
   const getAllRides = () => {
-    // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
 
     axios
