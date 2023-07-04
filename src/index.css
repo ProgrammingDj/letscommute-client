@@ -62,6 +62,7 @@ textarea {
 
 .card {
   display: block;
+  color: white;
   width: 400px;
   padding: 10px;
   box-shadow: 0px 2px 3px grey;
@@ -72,8 +73,12 @@ textarea {
 }
 
 .card:hover {
-  color: #0eb2ff !important;
-  border-top-color: #0eb2ff;
+  background-color: #3f71afa9;
+}
+
+.card h1 {
+  color: #ffffff;
+  text-shadow: 1px 1px 5px #000000;
 }
 
 .RideCard h3::after {

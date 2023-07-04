@@ -5,7 +5,7 @@ function RideCard({ toCity, fromCity, intervalOfRides, vehicle, _id }) {
   return (
     <Link to={`/rides/${_id}`}>
     <div className="RideCard card">
-      <h1>
+      <h1 className="">
         <span>{toCity}</span> → <span>{fromCity}</span>
       </h1>
       <p>{intervalOfRides}</p>
