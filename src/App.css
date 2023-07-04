@@ -48,3 +48,26 @@ input {
   border-radius: 5px;
   cursor: pointer;
 }
+
+.listContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.listRides {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #3f72af;
+}

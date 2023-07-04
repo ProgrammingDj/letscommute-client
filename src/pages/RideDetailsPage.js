@@ -4,7 +4,6 @@ import axios from "axios";
 import AddVehicle from "../components/AddVehicle";
 import VehicleCard from "../components/VehicleCard";
 import AddRide from "../components/AddRide";
-const API_URL = "http://localhost:5005";
 
 function RideDetailsPage(props) {
   const [ride, setRide] = useState(null);
@@ -16,7 +15,7 @@ function RideDetailsPage(props) {
 
     // Send the token through the request "Authorization" Headers
     axios
-      .get(`${API_URL}/api/rides/${rideId}`, {
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/rides/${rideId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {

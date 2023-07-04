@@ -14,7 +14,7 @@ function ListRides() {
 
     // Send the token through the request "Authorization" Headers
     axios
-      .get(`${API_URL}/api/rides/myrides`, {
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/rides/myrides`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => setRides(response.data))
@@ -29,7 +29,6 @@ function ListRides() {
 
   return (
     <div className="ListRides">
-
       {rides.map((ride) => (
         <RideCard key={ride._id} {...ride} />
       ))}

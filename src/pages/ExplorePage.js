@@ -12,7 +12,7 @@ function ExplorePage() {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get(`${API_URL}/api/rides`, {
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/rides`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => setRides(response.data))
@@ -24,12 +24,12 @@ function ExplorePage() {
   }, []);
 
   return (
-    <div className="ListRides">
-      
-
-      {rides.map((ride) => (
-        <RideCard key={ride._id} {...ride} />
-      ))}
+    <div className="listContainer">
+      <div className="listRides">
+        {rides.map((ride) => (
+          <RideCard key={ride._id} {...ride} />
+        ))}
+      </div>
     </div>
   );
 }

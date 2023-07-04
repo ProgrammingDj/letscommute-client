@@ -109,3 +109,73 @@ textarea {
 .RideCard {
   background-color: #dfeef9;
 }
+
+.loginPage,
+.signupPage,
+.ProfilePage,
+.AddVehicle,
+.VehiclePage {
+  background-color: #3f72af;
+  width: 400px;
+  border-radius: 8px;
+  margin: 50px auto;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.addRide {
+  background-color: #3f72af;
+  width: 400px;
+  border-radius: 8px;
+  margin: 50px auto;
+  padding: 10px 20px;
+}
+
+#intervalOfRide option {
+  width: 90%;
+}
+
+label {
+  color: #fff;
+  font-size: 1.3em;
+  justify-content: left;
+  display: flex;
+  margin: 10px;
+  font-weight: bold;
+  transition: 0.5s ease-in-out;
+}
+input {
+  width: 90%;
+  height: 20px;
+  background: #e0dede;
+  justify-content: center;
+  display: flex;
+  margin: 10px auto;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.listContainer {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  padding: 20px;
+  text-decoration: none;
+}
+
+.listRides {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  text-decoration: none;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:hover {
+  background-color: #3f72af;
+}

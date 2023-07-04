@@ -13,7 +13,7 @@ function ExplorePage() {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get(`${API_URL}/api/rides`, {
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/rides`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => setRides(response.data))

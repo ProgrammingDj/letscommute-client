@@ -34,7 +34,7 @@ function AddRide(props) {
 
     // Send the token through the request "Authorization" Headers
     axios
-      .post(`${API_URL}/api/rides`, requestBody, {
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/rides`, requestBody, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {

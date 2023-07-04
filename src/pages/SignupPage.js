@@ -41,7 +41,7 @@ function SignupPage(props) {
     // If the POST request is a successful redirect to the login page
     // If the request resolves with an error, set the error message in the state
     axios
-      .post(`${API_URL}/auth/signup`, requestBody)
+      .post(`${process.env.REACT_APP_SERVER_URL}/auth/signup`, requestBody)
       .then((response) => {
         navigate("/login");
       })
@@ -58,20 +58,10 @@ function SignupPage(props) {
 
       <form onSubmit={handleSignupSubmit}>
         <label>Name:</label>
-        <input 
-        type="text" 
-        name="name" 
-        value={name} 
-        onChange={handleName} 
-        />
+        <input type="text" name="name" value={name} onChange={handleName} />
 
         <label>Email:</label>
-        <input 
-        type="email" 
-        name="email" 
-        value={email} 
-        onChange={handleEmail} 
-        />
+        <input type="email" name="email" value={email} onChange={handleEmail} />
 
         <label>Password:</label>
         <input
@@ -111,7 +101,7 @@ function SignupPage(props) {
           onChange={handleProbationaryDriver}
         />
 
-        <br/>
+        <br />
 
         <button type="submit">Sign Up</button>
       </form>

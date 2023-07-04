@@ -7,7 +7,8 @@ function AddVehicle(props) {
   const [driver, setDriver] = useState("");
   const [vehicle, setVehicle] = useState("");
   const [vehicleImage, setVehicleImage] = useState("");
-  const [probationalDriversLicense, setProbationalDriversLicense] = useState("");
+  const [probationalDriversLicense, setProbationalDriversLicense] =
+    useState("");
   const [carSharing, setCarSharing] = useState("");
 
   const handleSubmit = (e) => {
@@ -19,10 +20,17 @@ function AddVehicle(props) {
     // We need the project id when creating the new task
     const { rideId } = props;
     // Create an object representing the body of the POST request
-    const requestBody = { driver, vehicle, vehicleImage, probationalDriversLicense, carSharing, rideId };
+    const requestBody = {
+      driver,
+      vehicle,
+      vehicleImage,
+      probationalDriversLicense,
+      carSharing,
+      rideId,
+    };
 
     axios
-      .post(`${API_URL}/api/vehicle`, requestBody, {
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/vehicle`, requestBody, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -57,8 +65,6 @@ function AddVehicle(props) {
           value={vehicleImage}
           onChange={(e) => setVehicleImage(e.target.value)}
         />
-
-
 
         <button type="submit">Add Vehicle</button>
       </form>

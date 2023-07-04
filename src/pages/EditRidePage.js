@@ -19,7 +19,7 @@ function EditRidePage(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .get(`${API_URL}/api/rides/${rideId}`, {
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/rides/${rideId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -29,22 +29,25 @@ function EditRidePage(props) {
         setIntervalOfRide(oneRide.intervalOfRide);
         setSeats(oneRide.seats);
         setVehicle(oneRide.vehicle);
-
       })
       .catch((error) => console.log(error));
   }, [rideId]);
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { toCity, fromCity, intervalOfRide, seats, vehicle};
+    const requestBody = { toCity, fromCity, intervalOfRide, seats, vehicle };
 
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .put(`${API_URL}/api/rides/${rideId}`, requestBody, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
+      .put(
+        `${process.env.REACT_APP_SERVER_URL}/api/rides/${rideId}`,
+        requestBody,
+        {
+          headers: { Authorization: `Bearer ${storedToken}` },
+        }
+      )
       .then((response) => {
         navigate(`/rides/${rideId}`);
       });
@@ -55,7 +58,7 @@ function EditRidePage(props) {
     const storedToken = localStorage.getItem("authToken");
 
     axios
-      .delete(`${API_URL}/api/rides/${rideId}`, {
+      .delete(`${process.env.REACT_APP_SERVER_URL}/api/rides/${rideId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then(() => {
@@ -104,7 +107,6 @@ function EditRidePage(props) {
           value={vehicle}
           onChange={(e) => setVehicle(e.target.value)}
         />
-
 
         <button type="submit">Update Ride</button>
       </form>
