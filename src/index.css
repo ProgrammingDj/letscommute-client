@@ -61,6 +61,7 @@ textarea {
 }
 
 .card {
+  display: block;
   width: 400px;
   padding: 10px;
   box-shadow: 0px 2px 3px grey;
@@ -68,6 +69,11 @@ textarea {
   margin-bottom: 20px;
   background: #94a7c8;
   border-radius: 4px;
+}
+
+.card:hover {
+  color: #0eb2ff !important;
+  border-top-color: #0eb2ff;
 }
 
 .RideCard h3::after {
@@ -107,7 +113,7 @@ textarea {
 }
 
 .RideCard {
-  background-color: #dfeef9;
+  background-color: #3f72af;
 }
 
 .loginPage,
@@ -176,6 +182,4 @@ a:link {
   text-decoration: none;
 }
 
-a:hover {
-  background-color: #3f72af;
-}
+ 
