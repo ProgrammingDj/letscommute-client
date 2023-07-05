@@ -101,13 +101,6 @@ function EditRidePage(props) {
           onChange={(e) => setSeats(e.target.value)}
         />
 
-        <label>Vehicle:</label>
-        <textarea
-          name="vehicle"
-          value={vehicle}
-          onChange={(e) => setVehicle(e.target.value)}
-        />
-
         <button type="submit">Update Ride</button>
       </form>
 
