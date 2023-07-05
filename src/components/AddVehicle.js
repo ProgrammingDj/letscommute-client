@@ -7,9 +7,9 @@ const API_URL = "http://localhost:5005";
 function AddVehicle(props) {
   const [vehicle, setVehicle] = useState("");
   const [vehicleImage, setVehicleImage] = useState("");
-
-  const navigate = useNavigate();
-  
+  const [probationalDriversLicense, setProbationalDriversLicense] =
+    useState("");
+  const [carSharing, setCarSharing] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,6 +23,8 @@ function AddVehicle(props) {
     const requestBody = {
       vehicle,
       vehicleImage,
+      probationalDriversLicense,
+      carSharing,
       rideId,
     };
 
@@ -35,7 +37,6 @@ function AddVehicle(props) {
         setVehicle("");
         setVehicleImage("");
         setProbationalDriversLicense("");
-        setCarSharing("");
 
         props.refreshProject();
       })

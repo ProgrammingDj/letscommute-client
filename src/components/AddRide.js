@@ -13,8 +13,6 @@ function AddRide(props) {
   const [vehicleImage, setVehicleImage] = useState("");
   const [probationalDriversLicense, setProbationalDriversLicense] =
     useState("");
-  const [carSharing, setCarSharing] = useState("");
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const requestBody = {
@@ -26,7 +24,6 @@ function AddRide(props) {
       vehicle,
       vehicleImage,
       probationalDriversLicense,
-      carSharing,
     };
 
     // Get the token from the localStorage
@@ -47,7 +44,6 @@ function AddRide(props) {
         setVehicle("");
         setVehicleImage("");
         setProbationalDriversLicense("");
-        setCarSharing("");
         props.refreshProjects();
       })
       .catch((error) => console.log(error));

@@ -1,66 +1,59 @@
-import { useState, useEffect } from "react";
+import React from "react";
 import { useParams, Link } from "react-router-dom";
-import axios from "axios";
-import AddVehicle from "../components/AddVehicle";
-import VehicleCard from "../components/VehicleCard";
-import AddRide from "../components/AddRide";
 
-function RideDetailsPage(props) {
-  const [ride, setRide] = useState(null);
-  const { rideId } = useParams();
 
-  const getRide = () => {
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem("authToken");
 
-    // Send the token through the request "Authorization" Headers
-    axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/api/rides/${rideId}`, {
-        headers: { Authorization: `Bearer ${storedToken}` },
-      })
-      .then((response) => {
-        const oneRide = response.data;
-        setRide(oneRide);
-      })
-      .catch((error) => console.log(error));
-  };
 
-  useEffect(() => {
-    getRide();
-  }, []);
+function SingleRide(props) {
 
-  return (
-    <div className="RideDetails">
-      {ride && (
-        <>
-          <h1>{ride.toCity}</h1>
-          <h1>{ride.fromCity}</h1>
-          <p>{ride.intervalOfRide}</p>
-          <p>{ride.seats}</p>
-          <p>{ride.driver}</p>
-          <p>{ride.vehicle}</p>
-          <p>{ride.vehicleImage}</p>
-          <p>{ride.probationalDriversLicense}</p>
-          <p>{ride.carSharing}</p>
-        </>
-      )}
-      <AddRide refreshRide={getRide} rideId={rideId} />
-      <AddVehicle refreshRide={getRide} rideId={rideId} />
+    const { _id } = useParams();
 
-      {ride &&
-        ride.vehicles.map((vehicle) => (
-          <VehicleCard key={vehicle._id} {...vehicle} />
-        ))}
+  if (props.listRides === undefined || props.listRides === null) {
+    console.log("This is it:" + props.listRides);
+    return <p>looking for a single Ride... moment, I will be right there.</p>;
+  } else {
 
-      <Link to="/rides">
-        <button>Back to explore</button>
-      </Link>
+    const filteredRides = props.listRides.filter((ride) => {
+        console.log(props.listRides)
+        console.log(ride._id.includes(_id))
+      return ride._id.includes(_id);
+    });
 
-      <Link to={`/rides/edit/${rideId}`}>
-        <button>Edit Ride</button>
-      </Link>
-    </div>
-  );
+    if (filteredRides.length === 0) {
+        return <p>Ride not found.</p>;
+      }
+
+    const ride = filteredRides[0];
+
+    return (
+      <div>
+        <div className="homebox">
+        </div>
+        <div className="ridebox">
+          <div>
+            <Link to={`/rides/${ride._id}`}>
+              {/* <div className="ridesbox-2">
+                <img
+                  src={ride.image_url}
+                  alt={ride.fromCi}
+                  width="200px"
+                  height="500px"
+                />
+              </div> */}
+              <div className="ridebox-2">
+                <h2>{ride.toCity}</h2> <br />
+                <p>{ride.fromCity}</p> <br />
+                {ride.intervalOfRides} <br />
+                {ride.driver} <br />
+                {ride.vehicle} <br />
+                {ride.probationaryDriversLicense} <br />
+              </div>
+            </Link>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
-export default RideDetailsPage;
+export default SingleRide;
