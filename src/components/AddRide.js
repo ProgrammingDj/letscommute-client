@@ -100,7 +100,7 @@ function AddRide(props) {
           <option value="Once a month">Once a month</option>
         </select>
 
-        <label for="intervalOfRides">Seats:</label>
+        <label for="seats">Seats:</label>
         <select
           id="seats"
           name="seats"
