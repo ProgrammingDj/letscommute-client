@@ -10,26 +10,29 @@ function AddRide(props) {
   const [seats, setSeats] = useState("");
   const [driver, setDriver] = useState("");
   const [vehicle, setVehicle] = useState("");
-  const [vehicleImage, setVehicleImage] = useState("");
+  const [vehicleList, setVehicleList] = useState("");
   const [probationalDriversLicense, setProbationalDriversLicense] =
     useState("");
+  
+      // Get the token from the localStorage
+      const storedToken = localStorage.getItem("authToken");
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody1 = {
+    const requestBody = {
       toCity,
       fromCity,
       intervalOfRide,
       seats,
+      vehicle,
       driver,
       probationalDriversLicense,
-    };
-
-    // Get the token from the localStorage
-    const storedToken = localStorage.getItem("authToken");
+    }
+    console.log(requestBody)
 
     // Send the token through the request "Authorization" Headers
     axios
-      .post(`${process.env.REACT_APP_SERVER_URL}/api/rides`, requestBody1, {
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/rides`, requestBody, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -40,29 +43,24 @@ function AddRide(props) {
         setSeats("");
         setDriver("");
         setVehicle("");
-        setVehicleImage("");
         setProbationalDriversLicense("");
       })
       .catch((error) => console.log(error));
   };
 
-const getUserVehicles = (() => {
-  const requestBody2 = {
-    vehicle, 
-    vehicleImage
-  };
-axios
-.get(`${process.env.REACT_APP_SERVER_URL}/api/vehicle`, requestBody2)
-.then((response) => {
-  setVehicle("");
-})
-.catch((error) => console.log(error));
-})
+  const getUserVehicles = (() => {
+    axios
+    .get(`${process.env.REACT_APP_SERVER_URL}/api/vehicle`, {headers: { Authorization: `Bearer ${storedToken}` }})
+    .then((response) => {
+      setVehicleList(response.data);
+    })
+    .catch((error) => console.log(error));
+  })
 
 
-useEffect(() => {
-  getUserVehicles();
-}, []);
+  useEffect(() => {
+    getUserVehicles();
+  }, []);
 
   return (
     <div className="addRide">
@@ -93,11 +91,11 @@ useEffect(() => {
           onChange={(e) => setIntervalOfRide(e.target.value)}
           value={intervalOfRide}
         >
-          <option value="multible">Multiple times a Week</option>
-          <option value="onceWeek">Once a Week</option>
-          <option value="twoWeeks">Every 2 Weeks</option>
-          <option value="threeWeeks">Every 3 Weeks</option>
-          <option value="onceMonth">Once a month</option>
+          <option value="Multiple times a Week">Multiple times a Week</option>
+          <option value="Once a Week">Once a Week</option>
+          <option value="Every 2 Weeks">Every 2 Weeks</option>
+          <option value="Every 3 Weeks">Every 3 Weeks</option>
+          <option value="Once a month">Once a month</option>
         </select>
 
         <label for="intervalOfRide">Seats:</label>
@@ -123,9 +121,8 @@ useEffect(() => {
           size="1"
           onChange={(e) => setVehicle(e.target.value)}
         >
-          <option value="{vehicle}">1</option>
-          <option value="{vehicle}">2</option>
-          <option value="{vehicle}">3</option>
+          <option>Select a vehicle</option>
+          {vehicleList.length > 0 && vehicleList.map(vehicle => <option name="vehicle" value={vehicle._id}>{vehicle.vehicle}</option>)}
         </select>
 
         <button type="submit">Submit</button>

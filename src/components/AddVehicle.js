@@ -30,15 +30,13 @@ function AddVehicle(props) {
       .then((response) => {
         setVehicle("");
         setVehicleImage("");
-
-        props.refreshProject();
       })
       .catch((error) => console.log(error));
   };
 
   return (
     <div className="AddVehicle">
-      <form>
+      <form onSubmit={handleSubmit}>
         <label>Vehicle:</label>
         <input
           name="vehicle"
@@ -49,7 +47,7 @@ function AddVehicle(props) {
         <label>VehicleImage:</label>
         <input
           type="file"
-          name="VehicleImage"
+          name="vehicleImage"
           value={vehicleImage}
           onChange={(e) => setVehicleImage(e.target.value)}
         />
@@ -60,29 +58,29 @@ function AddVehicle(props) {
   );
 }
 
-function Image() {
-  const uploadImage = (files) => {
-    const formData = new FormData();
-    formData.append("file", files[0]);
-    formData.append("upload_preset", "jkctrn41");
+// function Image() {
+//   const uploadImage = (files) => {
+//     const formData = new FormData();
+//     formData.append("file", files[0]);
+//     formData.append("upload_preset", "jkctrn41");
 
-    axios
-      .post("https://api.cloudinary.com/v1_1/dtfcbfoo0/image/upload", formData)
-      .then((resonse) => console.log(response));
-  };
-  return (
-    <div>
-      <label>VehicleImage:</label>
-      <input
-        type="file"
-        name="VehicleImage"
-        value={vehicleImage}
-        onChange={(event) => {
-          uploadImage(event.target.files);
-        }}
-      />
-    </div>
-  );
-}
+//     axios
+//       .post("https://api.cloudinary.com/v1_1/dtfcbfoo0/image/upload", formData)
+//       .then((resonse) => console.log(response));
+//   };
+//   return (
+//     <div>
+//       <label>VehicleImage:</label>
+//       <input
+//         type="file"
+//         name="VehicleImage"
+//         value={vehicleImage}
+//         onChange={(event) => {
+//           uploadImage(event.target.files);
+//         }}
+//       />
+//     </div>
+//   );
+// }
 
 export default AddVehicle;
