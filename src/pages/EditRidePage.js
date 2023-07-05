@@ -35,7 +35,7 @@ function EditRidePage(props) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { toCity, fromCity, intervalOfRides, seats, vehicle };
+    const requestBody = { toCity, fromCity, intervalOfRides, seats };
 
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -81,30 +81,51 @@ function EditRidePage(props) {
         />
 
         <label>To City:</label>
-        <textarea
+        <input
           name="To City"
           value={toCity}
           onChange={(e) => setToCity(e.target.value)}
         />
 
         <label>Interval of ride:</label>
-        <textarea
-          name="Interval of ride"
-          value={intervalOfRides}
+        <select
+          id="intervalOfRides"
+          name="intervalOfRides"
+          size="1"
           onChange={(e) => setIntervalOfRides(e.target.value)}
-        />
+          value={intervalOfRides}
+        >
+          <option>Select interval</option>
+          <option value="Multiple times a Week">Multiple times a Week</option>
+          <option value="Once a Week">Once a Week</option>
+          <option value="Every 2 Weeks">Every 2 Weeks</option>
+          <option value="Every 3 Weeks">Every 3 Weeks</option>
+          <option value="Once a month">Once a month</option>
+        </select>
 
         <label>Seats:</label>
-        <textarea
-          name="Seats"
-          value={seats}
-          onChange={(e) => setSeats(e.target.value)}
-        />
 
+        <select
+          id="seats"
+          name="seats"
+          size="1"
+          onChange={(e) => setSeats(e.target.value)}
+          value={seats}
+        >
+          <option>Select # of seats</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+        <br />
         <button type="submit">Update Ride</button>
       </form>
-
-      <button onClick={deleteRide}>Delete Ride</button>
+      <div>
+        <button onClick={deleteRide}>Delete Ride</button>
+      </div>
     </div>
   );
 }
