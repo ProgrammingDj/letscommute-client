@@ -1,15 +1,15 @@
 import { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const API_URL = "http://localhost:5005";
 
 function AddVehicle(props) {
-  const [driver, setDriver] = useState("");
   const [vehicle, setVehicle] = useState("");
   const [vehicleImage, setVehicleImage] = useState("");
-  const [probationalDriversLicense, setProbationalDriversLicense] =
-    useState("");
-  const [carSharing, setCarSharing] = useState("");
+
+  const navigate = useNavigate();
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,11 +21,8 @@ function AddVehicle(props) {
     const { rideId } = props;
     // Create an object representing the body of the POST request
     const requestBody = {
-      driver,
       vehicle,
       vehicleImage,
-      probationalDriversLicense,
-      carSharing,
       rideId,
     };
 
@@ -34,15 +31,12 @@ function AddVehicle(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        // Reset the state to clear the inputs
         setDriver("");
         setVehicle("");
         setVehicleImage("");
         setProbationalDriversLicense("");
         setCarSharing("");
 
-        // Invoke the callback function coming through the props
-        // from the RideDetailsPage, to refresh the ride details
         props.refreshProject();
       })
       .catch((error) => console.log(error));
@@ -68,6 +62,31 @@ function AddVehicle(props) {
 
         <button type="submit">Add Vehicle</button>
       </form>
+    </div>
+  );
+}
+
+function Image() {
+  const uploadImage = (files) => {
+    const formData = new FormData();
+    formData.append("file", files[0]);
+    formData.append("upload_preset", "jkctrn41");
+
+    axios
+      .post("https://api.cloudinary.com/v1_1/dtfcbfoo0/image/upload", formData)
+      .then((resonse) => console.log(response));
+  };
+  return (
+    <div>
+      <label>VehicleImage:</label>
+      <input
+        type="file"
+        name="VehicleImage"
+        value={vehicleImage}
+        onChange={(event) => {
+          uploadImage(event.target.files);
+        }}
+      />
     </div>
   );
 }
