@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 import AddVehicle from "../components/AddVehicle";
@@ -13,23 +13,17 @@ function RideDetailsPage(props) {
   const getRide = () => {
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
-    console.log(rideId);
-    // Send the token through the request "Authorization" Headers
+
     axios
-      .get(`${process.env.REACT_APP_SERVER_URL}/api/rides/${rideId}`, {
+      .get(`${API_URL}/api/rides/${rideId}`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-
       .then((response) => {
         const oneRide = response.data;
         setRide(oneRide);
       })
       .catch((error) => console.log(error));
   };
-
-  useEffect(() => {
-    getRide();
-  }, []);
 
   return (
     <div className="RideDetails">
@@ -47,6 +41,7 @@ function RideDetailsPage(props) {
       <Link to="/rides">
         <button>Back to rides</button>
       </Link>
+
       <Link to={`/rides/edit/${rideId}`}>
         <button>Edit Ride</button>
       </Link>
