@@ -9,7 +9,6 @@ function AddVehicle(props) {
   const [vehicleImage, setVehicleImage] = useState("");
   const [probationalDriversLicense, setProbationalDriversLicense] =
     useState("");
-  const [carSharing, setCarSharing] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -25,7 +24,6 @@ function AddVehicle(props) {
       vehicle,
       vehicleImage,
       probationalDriversLicense,
-      carSharing,
       rideId,
     };
 
@@ -39,7 +37,6 @@ function AddVehicle(props) {
         setVehicle("");
         setVehicleImage("");
         setProbationalDriversLicense("");
-        setCarSharing("");
 
         // Invoke the callback function coming through the props
         // from the RideDetailsPage, to refresh the ride details
