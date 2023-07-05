@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
-import AddVehicle from "../components/AddVehicle";
-import VehicleCard from "../components/VehicleCard";
+
 
 const API_URL = "http://localhost:5005";
 
@@ -34,14 +33,44 @@ function RideDetailsPage(props) {
   return (
     <div className="RideDetails">
       {ride && (
-        <>
-          <h1 className="">
-            <span>{ride.fromCity}</span> → <span>{ride.toCity}</span>
-          </h1>
-          <p>Interval of rides: {ride.intervalOfRides}</p>
-          <p>Number of seats: {ride.seats}</p>
-          <p>The vehicle: {ride.vehicle.vehicle}</p>
-        </>
+        <table>
+          <tr>
+            <th>
+              <h1 className="">
+                <span>{ride.fromCity}</span> → <span>{ride.toCity}</span>
+              </h1>
+            </th>
+          </tr>
+          <tr>
+            <td>Interval of rides:</td>
+            <td>{ride.intervalOfRides}</td>
+          </tr>
+          <tr>
+            <td>Number of seats:</td>
+            <td>{ride.seats}</td>
+          </tr>
+          <tr>
+            <td>The vehicle:</td>
+            <td>{ride.vehicle.vehicle}</td>
+          </tr>
+          <tr>
+            <td>Vehicle image</td>
+            <td>{ride.vehicle.vehicle}</td>
+          </tr>
+          <tr>
+            <td>The driver is:</td>
+            <td>{ride.vehicle.vehicle}</td>
+          </tr>
+          <tr>
+            <td>The drivers number is:</td>
+            <td>{ride.vehicle.vehicle}</td>
+          </tr>
+          <tr>
+            <td>probationaryDriver:</td>
+            <td>{ride.vehicle.vehicle}</td>
+          </tr>
+
+        </table>
       )}
 
       <Link to="/rides">
