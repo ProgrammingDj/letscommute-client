@@ -15,7 +15,7 @@ function ExplorePage() {
       .get(`${process.env.REACT_APP_SERVER_URL}/api/rides`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then((response) => setRides(response.data))
+      .then((response) => setRides(response.data.reverse()))
       .catch((error) => console.log(error));
   };
 

@@ -8,6 +8,8 @@ function AddVehicle(props) {
   const [vehicle, setVehicle] = useState("");
   const [vehicleImage, setVehicleImage] = useState("");
 
+  const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -30,6 +32,7 @@ function AddVehicle(props) {
       .then((response) => {
         setVehicle("");
         setVehicleImage("");
+        navigate("/rides/addride");
       })
       .catch((error) => console.log(error));
   };

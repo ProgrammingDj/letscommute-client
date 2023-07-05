@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
@@ -14,6 +15,7 @@ function AddRide(props) {
   const [probationalDriversLicense, setProbationalDriversLicense] =
     useState("");
 
+  const navigate = useNavigate();
   // Get the token from the localStorage
   const storedToken = localStorage.getItem("authToken");
 
@@ -44,7 +46,9 @@ function AddRide(props) {
         setDriver("");
         setVehicle("");
         setProbationalDriversLicense("");
+        navigate("/rides");
       })
+
       .catch((error) => console.log(error));
   };
 

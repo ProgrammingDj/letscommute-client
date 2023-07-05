@@ -17,6 +17,7 @@ function ExplorePage() {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => setRides(response.data))
+
       .catch((error) => console.log(error));
   };
 
