@@ -7,9 +7,6 @@ const API_URL = "http://localhost:5005";
 function AddVehicle(props) {
   const [vehicle, setVehicle] = useState("");
   const [vehicleImage, setVehicleImage] = useState("");
-  const [probationalDriversLicense, setProbationalDriversLicense] =
-    useState("");
-  const [carSharing, setCarSharing] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,8 +20,6 @@ function AddVehicle(props) {
     const requestBody = {
       vehicle,
       vehicleImage,
-      probationalDriversLicense,
-      carSharing,
       rideId,
     };
 
@@ -33,10 +28,8 @@ function AddVehicle(props) {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
-        setDriver("");
         setVehicle("");
         setVehicleImage("");
-        setProbationalDriversLicense("");
 
         props.refreshProject();
       })
