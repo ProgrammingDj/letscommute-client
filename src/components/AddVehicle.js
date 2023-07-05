@@ -49,7 +49,7 @@ function AddVehicle(props) {
         <label>VehicleImage:</label>
         <input
           type="file"
-          name="VehicleImage"
+          name="vehicleImage"
           value={vehicleImage}
           onChange={(e) => setVehicleImage(e.target.value)}
         />
