@@ -121,6 +121,7 @@ textarea {
   background-color: #3f72af;
 }
 
+.editRidePage,
 .loginPage,
 .signupPage,
 .ProfilePage,
@@ -186,5 +187,3 @@ input {
 a:link {
   text-decoration: none;
 }
-
- 

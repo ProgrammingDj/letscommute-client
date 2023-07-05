@@ -68,7 +68,7 @@ function EditRidePage(props) {
   };
 
   return (
-    <div className="EditRidePage">
+    <div className="editRidePage">
       <h3>Edit the Ride</h3>
 
       <form onSubmit={handleFormSubmit}>
