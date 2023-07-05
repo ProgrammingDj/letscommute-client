@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import axios from "axios";
 
 const API_URL = "http://localhost:5005";
@@ -44,10 +44,23 @@ function AddRide(props) {
         setVehicle("");
         setVehicleImage("");
         setProbationalDriversLicense("");
-        props.refreshProjects();
       })
       .catch((error) => console.log(error));
   };
+
+function getUserVehicles () {
+axios
+.get(`${process.env.REACT_APP_SERVER_URL}/api/vehicle`, requestBody)
+.then((response) => {
+  setVehicle("");
+})
+.catch((error) => console.log(error));
+}
+}
+
+useEffect(() => {
+  getUserVehicles();
+}, []);
 
   return (
     <div className="addRide">
