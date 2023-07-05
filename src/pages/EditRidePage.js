@@ -7,7 +7,7 @@ const API_URL = "http://localhost:5005";
 function EditRidePage(props) {
   const [fromCity, setFromCity] = useState("");
   const [toCity, setToCity] = useState("");
-  const [intervalOfRide, setIntervalOfRide] = useState("");
+  const [intervalOfRides, setIntervalOfRides] = useState("");
   const [seats, setSeats] = useState("");
   const [vehicle, setVehicle] = useState("");
 
@@ -26,7 +26,7 @@ function EditRidePage(props) {
         const oneRide = response.data;
         setToCity(oneRide.toCity);
         setFromCity(oneRide.fromCity);
-        setIntervalOfRide(oneRide.intervalOfRide);
+        setIntervalOfRides(oneRide.intervalOfRides);
         setSeats(oneRide.seats);
         setVehicle(oneRide.vehicle);
       })
@@ -35,7 +35,7 @@ function EditRidePage(props) {
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
-    const requestBody = { toCity, fromCity, intervalOfRide, seats, vehicle };
+    const requestBody = { toCity, fromCity, intervalOfRides, seats, vehicle };
 
     // Get the token from the localStorage
     const storedToken = localStorage.getItem("authToken");
@@ -90,8 +90,8 @@ function EditRidePage(props) {
         <label>Interval of ride:</label>
         <textarea
           name="Interval of ride"
-          value={intervalOfRide}
-          onChange={(e) => setIntervalOfRide(e.target.value)}
+          value={intervalOfRides}
+          onChange={(e) => setIntervalOfRides(e.target.value)}
         />
 
         <label>Seats:</label>

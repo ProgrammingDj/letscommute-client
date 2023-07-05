@@ -6,29 +6,29 @@ const API_URL = "http://localhost:5005";
 function AddRide(props) {
   const [fromCity, setFromCity] = useState("");
   const [toCity, setToCity] = useState("");
-  const [intervalOfRide, setIntervalOfRide] = useState("");
+  const [intervalOfRides, setIntervalOfRides] = useState("");
   const [seats, setSeats] = useState("");
   const [driver, setDriver] = useState("");
   const [vehicle, setVehicle] = useState("");
   const [vehicleList, setVehicleList] = useState("");
   const [probationalDriversLicense, setProbationalDriversLicense] =
     useState("");
-  
-      // Get the token from the localStorage
-      const storedToken = localStorage.getItem("authToken");
-  
+
+  // Get the token from the localStorage
+  const storedToken = localStorage.getItem("authToken");
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const requestBody = {
       toCity,
       fromCity,
-      intervalOfRide,
+      intervalOfRides,
       seats,
       vehicle,
       driver,
       probationalDriversLicense,
-    }
-    console.log(requestBody)
+    };
+    console.log(requestBody);
 
     // Send the token through the request "Authorization" Headers
     axios
@@ -39,7 +39,7 @@ function AddRide(props) {
         // Reset the state
         setToCity("");
         setFromCity("");
-        setIntervalOfRide("");
+        setIntervalOfRides("");
         setSeats("");
         setDriver("");
         setVehicle("");
@@ -48,15 +48,16 @@ function AddRide(props) {
       .catch((error) => console.log(error));
   };
 
-  const getUserVehicles = (() => {
+  const getUserVehicles = () => {
     axios
-    .get(`${process.env.REACT_APP_SERVER_URL}/api/vehicle`, {headers: { Authorization: `Bearer ${storedToken}` }})
-    .then((response) => {
-      setVehicleList(response.data);
-    })
-    .catch((error) => console.log(error));
-  })
-
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/vehicle`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
+      .then((response) => {
+        setVehicleList(response.data);
+      })
+      .catch((error) => console.log(error));
+  };
 
   useEffect(() => {
     getUserVehicles();
@@ -83,14 +84,15 @@ function AddRide(props) {
           onChange={(e) => setToCity(e.target.value)}
         />
 
-        <label for="intervalOfRide">Interval of ride:</label>
+        <label for="intervalOfRides">Interval of ride:</label>
         <select
-          id="intervalOfRide"
-          name="intervalOfRide"
+          id="intervalOfRides"
+          name="intervalOfRides"
           size="1"
-          onChange={(e) => setIntervalOfRide(e.target.value)}
-          value={intervalOfRide}
+          onChange={(e) => setIntervalOfRides(e.target.value)}
+          value={intervalOfRides}
         >
+          <option>Select interval</option>
           <option value="Multiple times a Week">Multiple times a Week</option>
           <option value="Once a Week">Once a Week</option>
           <option value="Every 2 Weeks">Every 2 Weeks</option>
@@ -98,7 +100,7 @@ function AddRide(props) {
           <option value="Once a month">Once a month</option>
         </select>
 
-        <label for="intervalOfRide">Seats:</label>
+        <label for="intervalOfRides">Seats:</label>
         <select
           id="seats"
           name="seats"
@@ -106,6 +108,7 @@ function AddRide(props) {
           onChange={(e) => setSeats(e.target.value)}
           value={seats}
         >
+          <option>Select # of seats</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
@@ -122,7 +125,12 @@ function AddRide(props) {
           onChange={(e) => setVehicle(e.target.value)}
         >
           <option>Select a vehicle</option>
-          {vehicleList.length > 0 && vehicleList.map(vehicle => <option name="vehicle" value={vehicle._id}>{vehicle.vehicle}</option>)}
+          {vehicleList.length > 0 &&
+            vehicleList.map((vehicle) => (
+              <option name="vehicle" value={vehicle._id}>
+                {vehicle.vehicle}
+              </option>
+            ))}
         </select>
 
         <button type="submit">Submit</button>

@@ -10,7 +10,7 @@ import LoginPage from "./pages/LoginPage";
 import IsPrivate from "./components/isPrivate";
 import IsAnon from "./components/isAnon";
 import AddRidePage from "./pages/AddRidePage";
-import MyRidesPage from "./pages/MyRidesPage"
+import MyRidesPage from "./pages/MyRidesPage";
 import ProfilePage from "./pages/ProfilePage";
 import AddVehiclePage from "./components/AddVehicle";
 
@@ -39,7 +39,7 @@ function App() {
             </IsPrivate>
           }
         />
-        
+
         <Route
           path="/rides/addride"
           element={
@@ -49,8 +49,6 @@ function App() {
           }
         />
 
-
-
         <Route
           path="/rides/myrides"
           element={
@@ -59,8 +57,6 @@ function App() {
             </IsPrivate>
           }
         />
-
-
 
         <Route
           path="/profile/"
@@ -72,16 +68,16 @@ function App() {
         />
 
         <Route
-          path="/rides/:ridesId"
+          path="/rides/:rideId"
           element={
             <IsPrivate>
               <RideDetailsPage />
             </IsPrivate>
           }
         />
-        
+
         <Route
-          path="/rides/edit/:ridesId"
+          path="/rides/edit/:rideId"
           element={
             <IsPrivate>
               <EditRidePage />
