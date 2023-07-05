@@ -15,14 +15,12 @@ function AddRide(props) {
     useState("");
   const handleSubmit = (e) => {
     e.preventDefault();
-    const requestBody = {
+    const requestBody1 = {
       toCity,
       fromCity,
       intervalOfRide,
       seats,
       driver,
-      vehicle,
-      vehicleImage,
       probationalDriversLicense,
     };
 
@@ -31,7 +29,7 @@ function AddRide(props) {
 
     // Send the token through the request "Authorization" Headers
     axios
-      .post(`${process.env.REACT_APP_SERVER_URL}/api/rides`, requestBody, {
+      .post(`${process.env.REACT_APP_SERVER_URL}/api/rides`, requestBody1, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
       .then((response) => {
@@ -48,15 +46,19 @@ function AddRide(props) {
       .catch((error) => console.log(error));
   };
 
-function getUserVehicles () {
+const getUserVehicles = (() => {
+  const requestBody2 = {
+    vehicle, 
+    vehicleImage
+  };
 axios
-.get(`${process.env.REACT_APP_SERVER_URL}/api/vehicle`, requestBody)
+.get(`${process.env.REACT_APP_SERVER_URL}/api/vehicle`, requestBody2)
 .then((response) => {
   setVehicle("");
 })
 .catch((error) => console.log(error));
-}
-}
+})
+
 
 useEffect(() => {
   getUserVehicles();
