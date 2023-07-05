@@ -1,24 +1,57 @@
-import React from "react";
+import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-import RideCard from "../components/RideCard";
+import axios from "axios";
+import AddVehicle from "../components/AddVehicle";
+import VehicleCard from "../components/VehicleCard";
 
+const API_URL = "http://localhost:5005";
 
+function RideDetailsPage(props) {
+  const [ride, setRide] = useState(null);
+  const { rideId } = useParams();
 
-function SingleRide(props) {
+  const getRide = () => {
+    // Get the token from the localStorage
+    const storedToken = localStorage.getItem("authToken");
+    console.log(rideId);
+    // Send the token through the request "Authorization" Headers
+    axios
+      .get(`${process.env.REACT_APP_SERVER_URL}/api/rides/${rideId}`, {
+        headers: { Authorization: `Bearer ${storedToken}` },
+      })
 
-    const { _id } = useParams();
+      .then((response) => {
+        const oneRide = response.data;
+        setRide(oneRide);
+      })
+      .catch((error) => console.log(error));
+  };
 
-  if (props.listRides === undefined || props.listRides === null) {
-    console.log("This is it:" + props.listRides);
-    return <p>looking for a single Ride... moment, I will be right there.</p>;
-  } else {
+  useEffect(() => {
+    getRide();
+  }, []);
 
-    return (
+  return (
+    <div className="RideDetails">
+      {ride && (
+        <>
+          <h1 className="">
+            <span>{ride.fromCity}</span> → <span>{ride.toCity}</span>
+          </h1>
+          <p>{ride.intervalOfRides}</p>
+          <p>{ride.seats}</p>
+          <p>{ride.vehicle.vehicle}</p>
+        </>
+      )}
 
-          <RideCard key={_id}/>
-
-    );
-  }
+      <Link to="/rides">
+        <button>Back to rides</button>
+      </Link>
+      <Link to={`/rides/edit/${rideId}`}>
+        <button>Edit Ride</button>
+      </Link>
+    </div>
+  );
 }
 
-export default SingleRide;
+export default RideDetailsPage;
