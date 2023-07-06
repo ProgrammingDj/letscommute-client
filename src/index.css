@@ -43,29 +43,12 @@ textarea {
   margin: 10px;
 }
 
-.Navbar {
-  background: #515f7d;
-  color: white;
-  padding: 0px 20px;
-  box-shadow: 0px 1px 2px gray;
-  width: 100%;
-  margin-bottom: 15px;
-  padding: 5px;
-}
-
-.Navbar li {
-  list-style: none;
-  color: white;
-  font-size: 24px;
-  font-weight: 600;
-}
-
 .card {
   display: block;
   color: white;
   width: 400px;
   padding: 10px;
-  box-shadow: 0px 2px 3px grey;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   margin: 0 auto;
   margin-bottom: 20px;
   background: #94a7c8;
@@ -86,24 +69,6 @@ textarea {
   margin-left: 5px;
 }
 
-.EditRidePage,
-.AddRide,
-.AddVehicle {
-  background: #f9eec3;
-  border: 1px solid grey;
-  box-shadow: 0px 2px 3px grey;
-  width: 400px;
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  padding: 10px;
-  border-radius: 4px;
-}
-
-.EditRidePage {
-  background-color: rgb(239, 196, 88);
-}
-
 .AddRide button,
 .AddVehicle button {
   display: block;
@@ -117,26 +82,15 @@ textarea {
 .loginPage,
 .signupPage,
 .ProfilePage,
-.AddVehicle,
-.VehiclePage {
-  background-color: #3f72af;
-  width: 400px;
-  border-radius: 8px;
-  margin: 50px auto;
-  padding: 10px 20px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-}
-
+.addVehicle,
+.vehiclePage,
 .addRide {
   background-color: #3f72af;
   width: 400px;
   border-radius: 8px;
   margin: 50px auto;
   padding: 10px 20px;
-}
-
-#intervalOfRide option {
-  width: 90%;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 label {
@@ -178,4 +132,16 @@ input {
 
 a:link {
   text-decoration: none;
+}
+
+#intervalOfRides,
+#vehicle,
+#seats,
+.submit {
+  width: 95%;
+}
+
+.submit {
+  margin-top: 40px;
+  margin-bottom: 20px;
 }

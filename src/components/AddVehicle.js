@@ -38,7 +38,8 @@ function AddVehicle(props) {
   };
 
   return (
-    <div className="AddVehicle">
+    <div className="addVehicle">
+      <h2>ADD VEHICLE</h2>
       <form onSubmit={handleSubmit}>
         <label>Vehicle:</label>
         <input
@@ -55,7 +56,7 @@ function AddVehicle(props) {
           onChange={(e) => setVehicleImage(e.target.value)}
         />
 
-        <button type="submit">Add Vehicle</button>
+        <button className="submit" type="submit">Add Vehicle</button>
       </form>
     </div>
   );

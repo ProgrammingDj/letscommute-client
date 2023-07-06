@@ -69,7 +69,7 @@ function AddRide(props) {
 
   return (
     <div className="addRide">
-      <h3>Add Ride</h3>
+      <h2>ADD RIDE</h2>
 
       <form onSubmit={handleSubmit}>
         <label>From City:</label>
@@ -137,7 +137,9 @@ function AddRide(props) {
             ))}
         </select>
 
-        <button type="submit">Submit</button>
+        <button className="submit" type="submit">
+          Add ride
+        </button>
       </form>
     </div>
   );
