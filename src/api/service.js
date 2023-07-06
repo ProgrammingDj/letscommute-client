@@ -2,7 +2,7 @@ import axios from "axios";
 
 const api = axios.create({
   // make sure you use PORT = 5005 (the port where our server is running)
-  baseURL: "http://localhost:5005/api",
+  baseURL: `${process.env.REACT_APP_SERVER_URL}`,
   // withCredentials: true // => you might need this option if using cookies and sessions
 });
 
@@ -12,7 +12,7 @@ const errorHandler = (err) => {
 
 const uploadImage = (file) => {
   return api
-    .post("/upload", file)
+    .post("/api/upload", file)
     .then((res) => res.data)
     .catch(errorHandler);
 };
