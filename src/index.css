@@ -79,6 +79,7 @@ textarea {
 }
 
 .editRidePage,
+.rideDetails,
 .loginPage,
 .signupPage,
 .ProfilePage,
@@ -91,6 +92,19 @@ textarea {
   margin: 50px auto;
   padding: 10px 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.rideDetails {
+  background-color: #3f72af;
+  width: 500px;
+  border-radius: 8px;
+  margin: 50px auto;
+  padding: 10px 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.image {
+  border-radius: 30px;
 }
 
 label {

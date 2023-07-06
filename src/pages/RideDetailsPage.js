@@ -30,51 +30,52 @@ function RideDetailsPage(props) {
   }, []);
 
   return (
-    <div className="RideDetails">
+    <div className="rideDetails">
       {ride && (
         <table>
           <tbody>
-          <tr>
-            <th>
-              <h1 className="">
-                <span>{ride.fromCity}</span> → <span>{ride.toCity}</span>
-              </h1>
-            </th>
-          </tr>
-          <tr>
-            <td>Interval of rides:</td>
-            <td>{ride.intervalOfRides}</td>
-          </tr>
-          <tr>
-            <td>Number of seats:</td>
-            <td>{ride.seats}</td>
-          </tr>
-          <tr>
-            <td>The vehicle:</td>
-            <td>{ride.vehicle.vehicle}</td>
-          </tr>
-          <tr>
-            <td>Vehicle image</td>
-            <td>
-              <img
-                src={ride.vehicle.imageUrl}
-                alt="image of vehicle"
-                width="200"
-              />
-            </td>
-          </tr>
-          <tr>
-            <td>The driver is:</td>
-            <td>{ride.vehicle.owner.name}</td>
-          </tr>
-          <tr>
-            <td>Drivers phonenumber:</td>
-            <td>{ride.vehicle.owner.phoneNumber}</td>
-          </tr>
-          <tr>
-            <td>Probationary driver:</td>
-            <td>{ride.vehicle.owner.probationaryDriver}</td>
-          </tr>
+            <tr>
+              <th>
+                <h1 className="">
+                  <span>{ride.fromCity}</span> → <span>{ride.toCity}</span>
+                </h1>
+              </th>
+            </tr>
+            <tr>
+              <td>Interval of rides:</td>
+              <td>{ride.intervalOfRides}</td>
+            </tr>
+            <tr>
+              <td>Number of seats:</td>
+              <td>{ride.seats}</td>
+            </tr>
+            <tr>
+              <td>The vehicle:</td>
+              <td>{ride.vehicle.vehicle}</td>
+            </tr>
+            <tr>
+              <td>Vehicle image</td>
+              <td>
+                <img
+                  className="image"
+                  src={ride.vehicle.imageUrl}
+                  alt="image of vehicle"
+                  width="300"
+                />
+              </td>
+            </tr>
+            <tr>
+              <td>The driver is:</td>
+              <td>{ride.vehicle.owner.name}</td>
+            </tr>
+            <tr>
+              <td>Drivers phonenumber:</td>
+              <td>{ride.vehicle.owner.phoneNumber}</td>
+            </tr>
+            <tr>
+              <td>Probationary driver:</td>
+              <td>{ride.vehicle.owner.probationaryDriver}</td>
+            </tr>
           </tbody>
         </table>
       )}
