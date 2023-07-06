@@ -59,15 +59,15 @@ function RideDetailsPage(props) {
           </tr>
           <tr>
             <td>The driver is:</td>
-            <td>{ride.vehicle.vehicle}</td>
+            <td>{ride.vehicle.owner.name}</td>
           </tr>
           <tr>
             <td>The drivers number is:</td>
-            <td>{ride.vehicle.vehicle}</td>
+            <td>{ride.vehicle.owner.phoneNumber}</td>
           </tr>
           <tr>
             <td>probationaryDriver:</td>
-            <td>{ride.vehicle.vehicle}</td>
+            <td>{ride.vehicle.owner.probationaryDriver}</td>
           </tr>
 
         </table>
