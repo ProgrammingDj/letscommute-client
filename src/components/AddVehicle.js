@@ -75,7 +75,6 @@ function AddVehicle(props) {
         <input
           type="file"
           name="vehicleImage"
-          value={vehicleImage}
           onChange={(e) => handleFileUpload(e)}
         />
 
