@@ -77,6 +77,7 @@ function AddRide(props) {
           type="text"
           name="From City"
           value={fromCity}
+          placeholder="Enter the city you are traveling from"
           onChange={(e) => setFromCity(e.target.value)}
         />
 
@@ -85,6 +86,8 @@ function AddRide(props) {
           type="text"
           name="To City"
           value={toCity}
+          placeholder="
+          Enter the city you are traveling to"
           onChange={(e) => setToCity(e.target.value)}
         />
 
@@ -96,7 +99,7 @@ function AddRide(props) {
           onChange={(e) => setIntervalOfRides(e.target.value)}
           value={intervalOfRides}
         >
-          <option>Select interval</option>
+          <option>Select the interval</option>
           <option value="Multiple times a Week">Multiple times a Week</option>
           <option value="Once a Week">Once a Week</option>
           <option value="Every 2 Weeks">Every 2 Weeks</option>
@@ -112,7 +115,7 @@ function AddRide(props) {
           onChange={(e) => setSeats(e.target.value)}
           value={seats}
         >
-          <option>Select # of seats</option>
+          <option>Select the number of available seats</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>

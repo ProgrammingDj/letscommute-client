@@ -45,6 +45,7 @@ function AddVehicle(props) {
         <input
           name="vehicle"
           value={vehicle}
+          placeholder="Enter the make of your car"
           onChange={(e) => setVehicle(e.target.value)}
         />
 
