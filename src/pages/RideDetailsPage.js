@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import axios from "axios";
 
-
 const API_URL = "http://localhost:5005";
 
 function RideDetailsPage(props) {
@@ -34,6 +33,7 @@ function RideDetailsPage(props) {
     <div className="RideDetails">
       {ride && (
         <table>
+          <tbody>
           <tr>
             <th>
               <h1 className="">
@@ -55,21 +55,27 @@ function RideDetailsPage(props) {
           </tr>
           <tr>
             <td>Vehicle image</td>
-            <td>{ride.vehicle.vehicle}</td>
+            <td>
+              <img
+                src={ride.vehicle.imageUrl}
+                alt="image of vehicle"
+                width="200"
+              />
+            </td>
           </tr>
           <tr>
             <td>The driver is:</td>
             <td>{ride.vehicle.owner.name}</td>
           </tr>
           <tr>
-            <td>The drivers number is:</td>
+            <td>Drivers phonenumber:</td>
             <td>{ride.vehicle.owner.phoneNumber}</td>
           </tr>
           <tr>
-            <td>probationaryDriver:</td>
+            <td>Probationary driver:</td>
             <td>{ride.vehicle.owner.probationaryDriver}</td>
           </tr>
-
+          </tbody>
         </table>
       )}
 

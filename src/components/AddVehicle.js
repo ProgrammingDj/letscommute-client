@@ -1,14 +1,36 @@
 import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import service from "../api/service";
 
 const API_URL = "http://localhost:5005";
 
 function AddVehicle(props) {
   const [vehicle, setVehicle] = useState("");
   const [vehicleImage, setVehicleImage] = useState("");
+  const [imageUrl, setImageUrl] = useState("");
 
   const navigate = useNavigate();
+
+  // ******** this method handles the file upload ********
+  const handleFileUpload = (e) => {
+    // console.log("The file to be uploaded is: ", e.target.files[0]);
+
+    const uploadData = new FormData();
+
+    // imageUrl => this name has to be the same as in the model since we pass
+    // req.body to .create() method when creating a new movie in '/api/movies' POST route
+    uploadData.append("imageUrl", e.target.files[0]);
+
+    service
+      .uploadImage(uploadData)
+      .then((response) => {
+        // console.log("response is: ", response);
+        // response carries "fileUrl" which we can use to update the state
+        setImageUrl(response.fileUrl);
+      })
+      .catch((err) => console.log("Error while uploading the file: ", err));
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -21,7 +43,7 @@ function AddVehicle(props) {
     // Create an object representing the body of the POST request
     const requestBody = {
       vehicle,
-      vehicleImage,
+      imageUrl,
       rideId,
     };
 
@@ -31,7 +53,7 @@ function AddVehicle(props) {
       })
       .then((response) => {
         setVehicle("");
-        setVehicleImage("");
+        setImageUrl("");
         navigate("/rides/addride");
       })
       .catch((error) => console.log(error));
@@ -54,10 +76,12 @@ function AddVehicle(props) {
           type="file"
           name="vehicleImage"
           value={vehicleImage}
-          onChange={(e) => setVehicleImage(e.target.value)}
+          onChange={(e) => handleFileUpload(e)}
         />
 
-        <button className="submit" type="submit">Add Vehicle</button>
+        <button className="submit" type="submit">
+          Add Vehicle
+        </button>
       </form>
     </div>
   );
