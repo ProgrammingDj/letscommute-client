@@ -33,47 +33,45 @@ function RideDetailsPage(props) {
     <div className="rideDetails">
       {ride && (
         <table>
+          <caption>
+            <h1 className="">
+              {ride.fromCity} → {ride.toCity}
+            </h1>
+          </caption>
           <tbody>
             <tr>
-              <th>
-                <h1 className="">
-                  <span>{ride.fromCity}</span> → <span>{ride.toCity}</span>
-                </h1>
-              </th>
-            </tr>
-            <tr>
-              <td>Interval of rides:</td>
+              <th>Interval of rides:</th>
               <td>{ride.intervalOfRides}</td>
             </tr>
             <tr>
-              <td>Number of seats:</td>
+              <th>Number of seats:</th>
               <td>{ride.seats}</td>
             </tr>
             <tr>
-              <td>The vehicle:</td>
+              <th>The vehicle:</th>
               <td>{ride.vehicle.vehicle}</td>
             </tr>
             <tr>
-              <td>Vehicle image</td>
-              <td>
+            
+              <td className="image2" colspan="2">
                 <img
                   className="image"
                   src={ride.vehicle.imageUrl}
                   alt="image of vehicle"
-                  width="300"
+                  
                 />
               </td>
             </tr>
             <tr>
-              <td>The driver is:</td>
+              <th>The driver is:</th>
               <td>{ride.vehicle.owner.name}</td>
             </tr>
             <tr>
-              <td>Drivers phonenumber:</td>
+              <th>Drivers phonenumber:</th>
               <td>{ride.vehicle.owner.phoneNumber}</td>
             </tr>
             <tr>
-              <td>Probationary driver:</td>
+              <th>Probationary driver:</th>
               <td>{ride.vehicle.owner.probationaryDriver}</td>
             </tr>
           </tbody>

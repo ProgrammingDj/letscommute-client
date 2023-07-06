@@ -9,8 +9,7 @@ function RideCard({ toCity, fromCity, intervalOfRides, vehicle, _id }) {
           <span>{fromCity}</span> → <span>{toCity}</span>
         </h1>
         <p>{intervalOfRides}</p>
-        <p>{vehicle?.vehicle}</p>
-        Click for details
+        <img className="image" src={vehicle.imageUrl} alt="image of vehicle" />
       </div>
     </Link>
   );

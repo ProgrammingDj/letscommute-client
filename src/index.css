@@ -59,7 +59,7 @@ textarea {
   background-color: #3f71afa9;
 }
 
-.card h1 {
+h1 {
   color: #ffffff;
   text-shadow: 1px 1px 5px #000000;
 }
@@ -87,6 +87,7 @@ textarea {
 .vehiclePage,
 .addRide {
   background-color: #3f72af;
+  color: rgb(211, 207, 207);
   width: 400px;
   border-radius: 8px;
   margin: 50px auto;
@@ -105,6 +106,14 @@ textarea {
 
 .image {
   border-radius: 30px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  width: 95%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.image2 {
+  padding: 0px 0px 0px 20px;
 }
 
 label {
@@ -160,4 +169,15 @@ a:link {
 .submit {
   margin-top: 40px;
   margin-bottom: 20px;
+}
+
+th {
+  padding: 7px;
+  text-align: right;
+}
+
+td {
+  padding: 7px;
+  text-align: left;
+  padding-right: 50px;
 }
