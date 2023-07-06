@@ -16,9 +16,17 @@ function ExplorePage() {
       .get(`${process.env.REACT_APP_SERVER_URL}/api/rides`, {
         headers: { Authorization: `Bearer ${storedToken}` },
       })
-      .then((response) => setRides(response.data))
-
+      .then((response) => {
+        const currentUserRides = response.data.filter(
+          (ride) => ride.userId === getCurrentUserId()
+        );
+        setRides(currentUserRides);
+      })
       .catch((error) => console.log(error));
+  };
+
+  const getCurrentUserId = () => {
+    return localStorage.getItem("userId");
   };
 
   useEffect(() => {
