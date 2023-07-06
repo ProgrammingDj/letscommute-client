@@ -18,7 +18,9 @@ function Navbar() {
         </Link>
       </div>
       <div className="menu">
-        <span>{user && <span className="greetUser">Hi, {user.name}</span>}</span>
+        <span>
+          {user && <span className="greetUser">Hi, {user.name}</span>}
+        </span>
         <Link to="/">
           <button>Home</button>
         </Link>
@@ -26,34 +28,32 @@ function Navbar() {
 
       {isLoggedIn && (
         <>
-          <div className="menu">
-            <Link to="/rides">
-              <button>Explore</button>
-            </Link>
-          </div>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Rides
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div className="menu">
+              <div class="dropdown-content">
+                <Link to="/rides">
+                  <>Explore</>
+                </Link>
+                <Link to="/rides/myrides">
+                  <>My Rides</>
+                </Link>
 
-          <div className="menu">
-            <Link to="/rides/addvehicle">
-              <button>Add Vehicle</button>
-            </Link>
+                <Link to="/rides/addvehicle">
+                  <>Add Vehicle</>
+                </Link>
+                <Link to="/rides/addride">
+                  <>Add Ride</>
+                </Link>
+              </div>
+            </div>
           </div>
-
-          <div className="menu">
-            <Link to="/rides/addride">
-              <button>Add Ride</button>
-            </Link>
-          </div>
-
-          <div className="menu">
-            <Link to="/rides/myrides">
-              <button>My Rides</button>
-            </Link>
-          </div>
-
           <div className="menu">
             <button onClick={logOutUser}>Logout</button>
           </div>
-          
         </>
       )}
 
