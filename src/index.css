@@ -135,6 +135,8 @@ a:link {
 }
 
 #intervalOfRides,
+#driver,
+#probationaryDriver,
 #vehicle,
 #seats,
 .submit {

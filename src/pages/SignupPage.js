@@ -70,13 +70,6 @@ function SignupPage(props) {
           value={password}
           onChange={handlePassword}
         />
-        <label>Profile image:</label>
-        <input
-          type="file"
-          name="profileImage"
-          value={profileImage}
-          onChange={handleProfileImage}
-        />
         <label>Phone number:</label>
         <input
           type="number"
@@ -85,31 +78,43 @@ function SignupPage(props) {
           onChange={handlePhoneNumber}
         />
 
-        <label>Driver:</label>
-        <input
-          type="text"
+        <label for="driver">Driver:</label>
+        <select
+          id="driver"
           name="driver"
+          size="1"
+          onChange={(e) => setDriver(e.target.value)}
           value={driver}
-          onChange={handleDriver}
-        />
+        >
+          <option>Are you a driver?</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
 
-        <label>Probationary driver:</label>
-        <input
-          type="text"
+        <label for="probationaryDriver">Probationary driver:</label>
+        <select
+          id="probationaryDriver"
           name="probationaryDriver"
+          size="1"
+          onChange={(e) => setProbationaryDriver(e.target.value)}
           value={probationaryDriver}
-          onChange={handleProbationaryDriver}
-        />
+        >
+          <option>Probationary driver?</option>
+          <option value="Yes">Yes</option>
+          <option value="No">No</option>
+        </select>
 
         <br />
 
-        <button type="submit">Sign Up</button>
+        <button className="submit" type="submit">
+          Sign Up
+        </button>
       </form>
 
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
-      <p>Already have account?</p>
-      <Link to={"/login"}> Login</Link>
+      <p>Already have an account?</p>
+      <Link to={"/login"}> Login here</Link>
     </div>
   );
 }

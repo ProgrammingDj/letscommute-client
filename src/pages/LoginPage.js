@@ -62,12 +62,14 @@ function LoginPage(props) {
           onChange={handlePassword}
         />
 
-        <button type="submit">Login</button>
+        <button className="submit" type="submit">
+          Login
+        </button>
       </form>
       {errorMessage && <p className="error-message">{errorMessage}</p>}
 
       <p>Don't have an account yet?</p>
-      <Link to={"/signup"}> Sign Up</Link>
+      <Link to={"/signup"}> Sign up here</Link>
     </div>
   );
 }
