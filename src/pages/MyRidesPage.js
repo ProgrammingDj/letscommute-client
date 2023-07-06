@@ -31,7 +31,7 @@ function MyRidesPage() {
 
   return (
     <div className="listContainer">
-      <div className="listmyRides">
+      <div className="listRides">
         {rides.map((ride) => (
           <RideCard key={ride._id} {...ride} />
         ))}
