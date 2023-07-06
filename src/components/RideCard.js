@@ -9,7 +9,7 @@ function RideCard({ toCity, fromCity, intervalOfRides, vehicle, _id }) {
           <span>{fromCity}</span> → <span>{toCity}</span>
         </h1>
         <p>{intervalOfRides}</p>
-        <p>{vehicle.vehicle}</p>
+        <p>{vehicle?.vehicle}</p>
         Click for details
       </div>
     </Link>
