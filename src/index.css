@@ -16,18 +16,18 @@ select {
   margin: 10px;
   font-size: 18px;
   background-color: #facf39;
-  color: #5f8cc3;
+  color: #294e7ca9;
   border: none;
   transition-duration: 0.4s;
   border-radius: 8px;
   cursor: pointer;
   border: #facf39 solid 1px;
+  box-shadow: 1px 1px 3px #000000;
 }
 
 button:hover {
-  background-color: #4caf4f00; /* Green */
-  color: white;
   border: #facf39 solid 1px;
+  box-shadow: 1px 1px 10px #000000;
 }
 
 label {
