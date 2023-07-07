@@ -2,10 +2,20 @@
 
 This repository contains the frontend code for a ridesharing application. The frontend is built using React.js and communicates with the backend API to fetch and display data related to rides and user authentication.
 
+Please note that this repository only includes the frontend code. The backend code (React) can be found in the following repository: [Link to Backend Repository](https://github.com/calicocode/letscommute-server)
+
 ## Prerequisites
 Before running the frontend application, make sure you have the following prerequisites installed:
 - Node.js
 - npm (Node package manager)
+
+## Demo
+
+A deployed version of the project can be accessed at the following link:
+
+https://letscommute.netlify.app
+
+You can use the deployed app to test the functionality of the API.
 
 ## Getting Started
 To get started with the frontend application, follow these steps:
