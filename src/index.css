@@ -87,7 +87,6 @@ h1 {
 .vehiclePage,
 .addRide {
   background-color: #3f72af;
-
   width: 400px;
   border-radius: 8px;
   margin: 50px auto;
@@ -97,6 +96,7 @@ h1 {
 
 .rideDetails {
   background-color: #3f72af;
+  color: rgb(211, 207, 207);
   width: 500px;
   border-radius: 8px;
   margin: 50px auto;
