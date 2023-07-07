@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# Let's commute
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Let's Commute: Find Your Perfect Ride-Share
+
+Let's Commute is your go-to website for hassle-free ride-sharing. Connect with like-minded individuals heading in the same direction and enjoy a more convenient and eco-friendly commute. Say goodbye to solo driving and hello to shared transportation. Join Let's Commute today and find your perfect travel companion.
 
 ## Available Scripts
 

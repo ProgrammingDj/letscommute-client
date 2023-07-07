@@ -7,4 +7,16 @@
   background-position: center top;
   background-repeat: no-repeat;
   background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.home-text {
+  margin: 8px;
+  background-color: #3f71afa9;
+  color: white;
+  text-shadow: 1px 1px 5px #000000;
+  width: 50rem;
+  border-radius: 10px;
 }
