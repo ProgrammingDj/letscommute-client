@@ -22,7 +22,6 @@ select {
   border-radius: 8px;
   cursor: pointer;
   border: #facf39 solid 1px;
-  
 }
 
 button:hover {
@@ -53,7 +52,7 @@ textarea {
   margin: 0 auto;
   margin-bottom: 20px;
   background: #94a7c8;
-  border-radius: 4px;
+  border-radius: 30px;
 }
 
 .card:hover {
