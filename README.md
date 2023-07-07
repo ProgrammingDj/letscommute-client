@@ -75,7 +75,3 @@ Remember to set the correct API URL in the `.env` file for the production enviro
 
 ## Conclusion
 This README provides an overview of the frontend code for the ridesharing application. It explains the setup, configuration, authentication, pages, components, API requests, and deployment process. Refer to the code comments and component documentation for further details on the implementation.
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
