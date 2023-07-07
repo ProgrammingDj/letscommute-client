@@ -60,7 +60,7 @@ textarea {
 }
 
 h1 {
-  color: #ffffff;
+  color: #facf39;
   text-shadow: 1px 1px 5px #000000;
 }
 
@@ -87,7 +87,7 @@ h1 {
 .vehiclePage,
 .addRide {
   background-color: #3f72af;
-  color: rgb(211, 207, 207);
+
   width: 400px;
   border-radius: 8px;
   margin: 50px auto;
